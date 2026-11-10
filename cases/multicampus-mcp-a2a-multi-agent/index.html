@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCP와 A2A로 배우는 Multi-Agent 시스템 설계 — 멀티캠퍼스 | 로빈테크</title>
+<meta name="description" content="n8n · LangGraph · CrewAI로 같은 과제를 세 번 구현해 프레임워크 철학을 비교하고, RAG · ADK · MCP · A2A를 거쳐 Claude Code 하네스로 쇼츠 스튜디오 멀티에이전트 팀을 완성한 3일 과정.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MCP와 A2A로 배우는 Multi-Agent 시스템 설계 — 멀티캠퍼스 | 로빈테크">
+<meta property="og:description" content="n8n · LangGraph · CrewAI로 같은 과제를 세 번 구현해 프레임워크 철학을 비교하고, RAG · ADK · MCP · A2A를 거쳐 Claude Code 하네스로 쇼츠 스튜디오 멀티에이전트 팀을 완성한 3일 과정.">
+<meta property="og:image" content="../../assets/img/logo-full.png">
+<meta name="theme-color" content="#fffdf9">
+<link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script>
+(function () {
+  var id = "G-TE7M2NEXWM", h = location.hostname;
+  var local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(h) || /\.localhost$/.test(h);
+  if (local && !/[?&]ga=1/.test(location.search)) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", id);
+  var s = document.createElement("script");
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+  document.head.appendChild(s);
+})();
+</script>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a class="brand" href="../../index.html" aria-label="로빈테크 홈">
+      <img src="../../assets/img/logo-mark.png" alt="" width="34" height="36">
+      <span>RobinTech</span>
+    </a>
+    <nav class="nav-links" aria-label="주 메뉴">
+      <a href="../../index.html#services">서비스</a>
+      <a href="../../index.html#pricing">요금</a>
+      <a href="../../cases/" aria-current="page">강의 · 컨설팅</a>
+      <a href="../../index.html#about">회사 소개</a>
+      <a href="../../index.html#contact">문의</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="../../index.html#contact">상담 신청</a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="case-hero">
+  <div class="container">
+    <div class="crumbs"><a href="../../index.html">홈</a> / <a href="../../cases/">강의 · 컨설팅</a></div>
+    
+    <div class="client-big">멀티캠퍼스</div>
+    <div style="font-size:14px;color:#c9bbca;margin-top:6px">교육 · 개발자 실무 교육 · 2026.07</div>
+    <h1>MCP와 A2A로 배우는 Multi-Agent 시스템 설계</h1>
+    <p class="lead">n8n · LangGraph · CrewAI로 같은 과제를 세 번 구현해 프레임워크 철학을 비교하고, RAG · ADK · MCP · A2A를 거쳐 Claude Code 하네스로 쇼츠 스튜디오 멀티에이전트 팀을 완성한 3일 과정.</p>
+  </div>
+</section>
+<div class="container case-body">
+  <div>
+    <dl class="facts"><div><dt>고객</dt><dd>멀티캠퍼스</dd></div><div><dt>대상</dt><dd>초 · 중급 개발자</dd></div><div><dt>형식</dt><dd>강의 + 실습</dd></div><div><dt>기간</dt><dd>3일 · 21시간</dd></div></dl>
+    <article class="prose">
+      <h2 id="overview">개요</h2>
+      <p>‘1인 미디어 회사 자동화’라는 하나의 서사로 3일을 관통합니다. 뉴스 브리핑 → 쇼츠 제작 → 운영 자동화로 이어지며, 2일차에 직접 만든 MCP 서버를 3일차 Claude Code에 연결하는 것이 과정의 클라이맥스입니다.</p><p>세션마다 강의 약 20분, 실습 약 35분으로 구성해 손으로 만들어 보는 시간을 최대화했습니다.</p>
+      <h2 id="curriculum">커리큘럼</h2>
+      <div class="modules"><div class="module"><div class="m-head">Day 1 · 에이전트 프레임워크</div><p>에이전트 기초와 계보 지도 · Claude Code 기초 · n8n supervisor 브리핑 · LangGraph(State, 조건부 엣지, 영속성, HITL) · CrewAI · Flows와 3-way 비교</p></div><div class="module"><div class="m-head">Day 2 · RAG · ADK · MCP · A2A</div><p>RAG 영어 회화 튜터(TTS) · Google ADK 오케스트레이션(LoopAgent/ParallelAgent) · 쇼츠 파이프라인(edge-tts, Pillow, ffmpeg) · 이미지 편집 MCP 서버(HTTP → stdio) · 외부 MCP · A2A 통신</p></div><div class="module"><div class="m-head">Day 3 · Claude Code 하네스</div><p>하네스 해부 · CLAUDE.md · Skills · MCP 연결(공식 서버 + 자작 편집 MCP) · Hooks 가드레일 · Subagents 3인 팀(기획 · 아트디렉터 · 편집자)과 플러그인 패키징</p></div></div>
+      <h2 id="labs">실습 · 사례</h2>
+      <ul><li>같은 과제를 n8n · LangGraph · CrewAI로 세 번 구현하는 3-way 비교</li><li>Google ADK로 쇼츠 기획 · 제작 파이프라인을 만들어 mp4까지 출력</li><li>Claude Code 서브에이전트 팀으로 완성하는 shorts-studio</li></ul>
+      <h2 id="tech">다룬 기술</h2>
+      <div class="chips"><span>Claude Code</span><span>n8n</span><span>LangGraph</span><span>CrewAI</span><span>Google ADK</span><span>Gemini</span><span>LangChain</span><span>MCP</span><span>A2A</span><span>ffmpeg</span><span>edge-tts</span></div>
+      <h2 id="outcomes">결과물</h2>
+      <ul><li>Day 1~3 강의 덱 369장과 강사용 마스터 문서</li><li>단계별 실습 샘플 코드와 완성본 shorts-studio</li><li>프레임워크 3-way 비교 그리드, 개인 도입 로드맵 워크시트</li></ul>
+    </article>
+  </div>
+  <aside class="aside">
+    <nav class="toc" aria-label="목차"><b>목차</b>
+      <a href="#overview">개요</a><a href="#curriculum">커리큘럼</a><a href="#labs">실습 · 사례</a><a href="#tech">다룬 기술</a><a href="#outcomes">결과물</a>
+    </nav>
+    <div class="cta-box">
+      <b>비슷한 교육을 검토 중이신가요?</b>
+      <p>조직의 개발 환경에 맞춰 과정을 설계해 드립니다.</p>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@robintech.cloud?subject=[강의 문의] MCP와 A2A로 배우는 Multi-Agent 시스템 설계">문의하기</a>
+    </div>
+  </aside>
+</div>
+<section class="more-cases">
+  <div class="container">
+    <h2 style="font-size:24px;font-weight:800;margin-bottom:28px">다른 사례</h2>
+    <div class="case-grid">
+<a class="case-card reveal" href="../../cases/fastcampus-agentic-engineering/" data-cat="online">
+  <div class="case-thumb t-fastcampus"><span class="status ongoing">진행 중</span>
+    <div><span class="client-name">패스트캠퍼스</span><span class="client-sub">FASTCAMPUS</span></div>
+  </div>
+  <div class="case-meta">패스트캠퍼스 · 교육 · 온라인 강의</div>
+  <h3>에이전틱 엔지니어링 끝장내기: 하네스 · 루프 · 그래프</h3>
+  <p class="summary">하네스 · 루프 · 그래프 엔지니어링을 대형 프로젝트 3개로 실습하는 온라인 과정. 슬랙 요청에서 PR까지, 에이전틱 ERP까지 엔터프라이즈 실무 수준을 목표로 합니다.</p>
+  <div class="dur">7 Part · 625분 · 2026.09 – 순차 오픈</div>
+</a>
+<a class="case-card reveal" href="../../cases/fastcampus-seminar-harness-loop-graph/" data-cat="talk">
+  <div class="case-thumb t-fastcampus">
+    <div><span class="client-name">패스트캠퍼스</span><span class="client-sub">FASTCAMPUS 세미나</span></div>
+  </div>
+  <div class="case-meta">패스트캠퍼스 · 교육 · 세미나</div>
+  <h3>하네스 · 루프 · 그래프: 영상 제작 자동화</h3>
+  <p class="summary">프롬프팅에서 하네스 · 루프 · 그래프로 이어지는 에이전트 엔지니어링 개념을 설명하고, 대본부터 최종 편집까지 자동화하는 그래프 프로그램을 라이브로 시연한 세미나.</p>
+  <div class="dur">60분 · 2026.09.15</div>
+</a>
+<a class="case-card reveal" href="../../cases/vibe-coding-for-everyone/" data-cat="edu">
+  <div class="case-thumb t-default">
+    <div><span class="client-name">AI 초격차 프로그램</span><span class="client-sub">비개발 직장인 대상</span></div>
+  </div>
+  <div class="case-meta">AI 초격차 프로그램 · 기타 · 임직원 교육</div>
+  <h3>바이브 코딩 4시간 + 심화 2시간</h3>
+  <p class="summary">코딩 경험이 없는 직장인이 무료 ChatGPT만으로 4시간 안에 자기 업무 도구를 만들고, 심화 과정에서 기록이 쌓이는 도구까지 완성하는 실습 과정.</p>
+  <div class="dur">4시간 + 2시간 · 2026.08</div>
+</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand"><img src="../../assets/img/logo-mark.png" alt="" width="32" height="34"> RobinTech</div>
+        <p style="margin-top:12px;max-width:320px">개발부터 운영까지 끝까지 책임지는 클라우드 · AI 소프트웨어 회사</p>
+      </div>
+      <div class="footer-links">
+        <div><b>서비스</b>
+          <a href="https://robin-cloud.com" target="_blank" rel="noopener">Robin Cloud</a>
+          <a href="https://ax.robin-cloud.com" target="_blank" rel="noopener">ax 맞춤 개발</a>
+          <a href="../../cases/">강의 · 컨설팅</a>
+        </div>
+        <div><b>회사</b>
+          <a href="../../index.html#about">회사 소개</a>
+          <a href="../../index.html#contact">문의</a>
+          <a href="../../privacy/">개인정보처리방침</a>
+          <a href="mailto:contact@robintech.cloud">contact@robintech.cloud</a>
+        </div>
+      </div>
+    </div>
+    <div class="biz">
+      <span>상호 로빈테크(RobinTech)</span><span>대표 김석현</span><span>사업자등록번호 572-72-00462</span><br>
+      <span>통신판매업신고 제 2026-서울강남-04001 호</span><span>주소 서울특별시 강남구 테헤란로79길 6, 제이에스타워 3층 브이423호</span><br>
+      <span>이메일 contact@robintech.cloud</span>
+    </div>
+    <div class="copyright">© 2026 RobinTech. All rights reserved. · <a href="../../privacy/" style="text-decoration:underline">개인정보처리방침</a></div>
+  </div>
+</footer>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

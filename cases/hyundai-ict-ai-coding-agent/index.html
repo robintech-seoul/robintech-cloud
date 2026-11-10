@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 코딩 에이전트 활용 기본과정 — 하네스 엔지니어링과 SDD — 현대자동차 ICT본부 | 로빈테크</title>
+<meta name="description" content="팀 노하우를 규칙 · 스킬 · MCP · 훅으로 만든 하네스 위에서, 요구사항부터 PR까지 검증 단계와 사람 승인 지점을 가진 ‘소프트웨어 팩토리’ 흐름을 실습하는 대기업 개발조직 과정.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 코딩 에이전트 활용 기본과정 — 하네스 엔지니어링과 SDD — 현대자동차 ICT본부 | 로빈테크">
+<meta property="og:description" content="팀 노하우를 규칙 · 스킬 · MCP · 훅으로 만든 하네스 위에서, 요구사항부터 PR까지 검증 단계와 사람 승인 지점을 가진 ‘소프트웨어 팩토리’ 흐름을 실습하는 대기업 개발조직 과정.">
+<meta property="og:image" content="../../assets/img/logo-full.png">
+<meta name="theme-color" content="#fffdf9">
+<link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script>
+(function () {
+  var id = "G-TE7M2NEXWM", h = location.hostname;
+  var local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(h) || /\.localhost$/.test(h);
+  if (local && !/[?&]ga=1/.test(location.search)) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", id);
+  var s = document.createElement("script");
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+  document.head.appendChild(s);
+})();
+</script>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a class="brand" href="../../index.html" aria-label="로빈테크 홈">
+      <img src="../../assets/img/logo-mark.png" alt="" width="34" height="36">
+      <span>RobinTech</span>
+    </a>
+    <nav class="nav-links" aria-label="주 메뉴">
+      <a href="../../index.html#services">서비스</a>
+      <a href="../../index.html#pricing">요금</a>
+      <a href="../../cases/" aria-current="page">강의 · 컨설팅</a>
+      <a href="../../index.html#about">회사 소개</a>
+      <a href="../../index.html#contact">문의</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="../../index.html#contact">상담 신청</a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="case-hero">
+  <div class="container">
+    <div class="crumbs"><a href="../../index.html">홈</a> / <a href="../../cases/">강의 · 컨설팅</a></div>
+    <span class="status-line">예정</span>
+    <div class="client-big">현대자동차 ICT본부</div>
+    <div style="font-size:14px;color:#c9bbca;margin-top:6px">제조 · 모빌리티 · 개발조직 교육 · 2026 하반기 예정</div>
+    <h1>AI 코딩 에이전트 활용 기본과정 — 하네스 엔지니어링과 SDD</h1>
+    <p class="lead">팀 노하우를 규칙 · 스킬 · MCP · 훅으로 만든 하네스 위에서, 요구사항부터 PR까지 검증 단계와 사람 승인 지점을 가진 ‘소프트웨어 팩토리’ 흐름을 실습하는 대기업 개발조직 과정.</p>
+  </div>
+</section>
+<div class="container case-body">
+  <div>
+    <dl class="facts"><div><dt>고객</dt><dd>현대자동차 ICT본부</dd></div><div><dt>주관</dt><dd>현대엔지비</dd></div><div><dt>형식</dt><dd>오프라인 강의 + 실습</dd></div><div><dt>기간</dt><dd>2일 · 14시간</dd></div></dl>
+    <article class="prose">
+      <h2 id="overview">개요</h2>
+      <p>개인 생산성 도구로서의 AI 코딩을 넘어, 조직이 함께 쓰는 개발 체계로 확장하는 것이 목표입니다. 고객 기획서 검토와 미팅을 거쳐 ‘소프트웨어 팩토리’ 방향으로 과정을 설계했습니다.</p><p>과정 내내 하나의 FastAPI · React 샘플 저장소를 쓰며, 마지막에는 팀이 저장소에 바로 넣어 쓸 수 있는 하네스 스타터 킷을 남깁니다.</p>
+      <h2 id="curriculum">커리큘럼</h2>
+      <div class="modules"><div class="module"><div class="m-head">1일차 · 하네스 엔지니어링</div><p>메인 루프와 구성요소, 수명주기와 훅 · 플러그인 분석과 스킬 · MCP 작성, 사내 시스템 연계 · Claude Code와 Codex 함께 쓰기 · 훅 실전</p></div><div class="module"><div class="m-head">2일차 · SDD에서 루프 · 그래프로</div><p>손으로 스펙 쓰기 · SDD 스킬과 Task 분할, 비용 · 루프와 그래프, 요구사항부터 PR까지, CI 게이트, 팀 공용 SW-Factory</p></div></div>
+      <h2 id="labs">실습 · 사례</h2>
+      <ul><li>팀 규칙 파일과 권한 설정, 팀 스킬 · 플러그인 배포</li><li>위험 동작 차단 · 자동 검사 훅</li><li>같은 기능을 손으로 쓴 결과와 에이전트 결과로 비교한 뒤 단계별 PR까지 진행</li></ul>
+      <h2 id="tech">다룬 기술</h2>
+      <div class="chips"><span>Claude Code</span><span>Codex</span><span>MCP</span><span>Hooks</span><span>Plugins</span><span>FastAPI</span><span>React</span><span>GitHub PR · CI</span></div>
+      <h2 id="outcomes">결과물</h2>
+      <ul><li>팀 하네스 스타터 킷</li><li>기본 → 심화 워크숍 → 고급 단계별 로드맵 제안</li></ul>
+    </article>
+  </div>
+  <aside class="aside">
+    <nav class="toc" aria-label="목차"><b>목차</b>
+      <a href="#overview">개요</a><a href="#curriculum">커리큘럼</a><a href="#labs">실습 · 사례</a><a href="#tech">다룬 기술</a><a href="#outcomes">결과물</a>
+    </nav>
+    <div class="cta-box">
+      <b>비슷한 교육을 검토 중이신가요?</b>
+      <p>조직의 개발 환경에 맞춰 과정을 설계해 드립니다.</p>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@robintech.cloud?subject=[강의 문의] AI 코딩 에이전트 활용 기본과정 — 하네스 엔지니어링과 SDD">문의하기</a>
+    </div>
+  </aside>
+</div>
+<section class="more-cases">
+  <div class="container">
+    <h2 style="font-size:24px;font-weight:800;margin-bottom:28px">다른 사례</h2>
+    <div class="case-grid">
+<a class="case-card reveal" href="../../cases/furiosa-claude-code-sw-development/" data-cat="talk">
+  <div class="case-thumb t-furiosa">
+    <div><span class="client-name">FuriosaAI</span><span class="client-sub">퓨리오사AI</span></div>
+  </div>
+  <div class="case-meta">FuriosaAI · 반도체 · 임직원 강연</div>
+  <h3>Claude Code와 AI를 활용한 SW 개발</h3>
+  <p class="summary">에이전트 루프 위에 쌓인 하네스 메커니즘을 공식 문서 기반으로 해부하고, SDD와 Ralph Loop 등 AI 활용 SW 개발 방법론을 정리한 심화 강연.</p>
+  <div class="dur">단회 강연 · 2026.05.12</div>
+</a>
+<a class="case-card reveal" href="../../cases/multicampus-mcp-a2a-multi-agent/" data-cat="edu">
+  <div class="case-thumb t-multicampus">
+    <div><span class="client-name">멀티캠퍼스</span><span class="client-sub">MULTICAMPUS</span></div>
+  </div>
+  <div class="case-meta">멀티캠퍼스 · 교육 · 개발자 실무 교육</div>
+  <h3>MCP와 A2A로 배우는 Multi-Agent 시스템 설계</h3>
+  <p class="summary">n8n · LangGraph · CrewAI로 같은 과제를 세 번 구현해 프레임워크 철학을 비교하고, RAG · ADK · MCP · A2A를 거쳐 Claude Code 하네스로 쇼츠 스튜디오 멀티에이전트 팀을 완성한 3일 과정.</p>
+  <div class="dur">3일 · 21시간 · 2026.07</div>
+</a>
+<a class="case-card reveal" href="../../cases/fastcampus-agentic-engineering/" data-cat="online">
+  <div class="case-thumb t-fastcampus"><span class="status ongoing">진행 중</span>
+    <div><span class="client-name">패스트캠퍼스</span><span class="client-sub">FASTCAMPUS</span></div>
+  </div>
+  <div class="case-meta">패스트캠퍼스 · 교육 · 온라인 강의</div>
+  <h3>에이전틱 엔지니어링 끝장내기: 하네스 · 루프 · 그래프</h3>
+  <p class="summary">하네스 · 루프 · 그래프 엔지니어링을 대형 프로젝트 3개로 실습하는 온라인 과정. 슬랙 요청에서 PR까지, 에이전틱 ERP까지 엔터프라이즈 실무 수준을 목표로 합니다.</p>
+  <div class="dur">7 Part · 625분 · 2026.09 – 순차 오픈</div>
+</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand"><img src="../../assets/img/logo-mark.png" alt="" width="32" height="34"> RobinTech</div>
+        <p style="margin-top:12px;max-width:320px">개발부터 운영까지 끝까지 책임지는 클라우드 · AI 소프트웨어 회사</p>
+      </div>
+      <div class="footer-links">
+        <div><b>서비스</b>
+          <a href="https://robin-cloud.com" target="_blank" rel="noopener">Robin Cloud</a>
+          <a href="https://ax.robin-cloud.com" target="_blank" rel="noopener">ax 맞춤 개발</a>
+          <a href="../../cases/">강의 · 컨설팅</a>
+        </div>
+        <div><b>회사</b>
+          <a href="../../index.html#about">회사 소개</a>
+          <a href="../../index.html#contact">문의</a>
+          <a href="../../privacy/">개인정보처리방침</a>
+          <a href="mailto:contact@robintech.cloud">contact@robintech.cloud</a>
+        </div>
+      </div>
+    </div>
+    <div class="biz">
+      <span>상호 로빈테크(RobinTech)</span><span>대표 김석현</span><span>사업자등록번호 572-72-00462</span><br>
+      <span>통신판매업신고 제 2026-서울강남-04001 호</span><span>주소 서울특별시 강남구 테헤란로79길 6, 제이에스타워 3층 브이423호</span><br>
+      <span>이메일 contact@robintech.cloud</span>
+    </div>
+    <div class="copyright">© 2026 RobinTech. All rights reserved. · <a href="../../privacy/" style="text-decoration:underline">개인정보처리방침</a></div>
+  </div>
+</footer>
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>
