@@ -312,12 +312,6 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.25; letter-spacing: -0.02em; }
 .timeline li small { color: var(--muted); font-size: 13.5px; }
 @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } .ceo { padding: 24px; } .timeline li { grid-template-columns: 80px 1fr; } }
 
-/* Partner */
-.partner { display: flex; align-items: center; gap: 20px; padding: 24px 28px; border-radius: var(--radius); background: #fff; border: 1px solid var(--line); margin-top: 28px; }
-.partner .x { font-weight: 800; color: var(--muted); }
-.partner b { font-size: 17px; }
-.partner p { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
-
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .contact-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 8px; transition: border-color .15s, transform .15s; }

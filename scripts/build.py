@@ -222,7 +222,7 @@ def build_index():
         <span class="tag">맞춤형 소프트웨어 개발</span>
         <h3>ax</h3>
         <a class="url" href="https://ax.robin-cloud.com" target="_blank" rel="noopener">ax.robin-cloud.com ↗</a>
-        <div class="badge-row"><span class="badge indigo">일반 외주 견적의 1/10</span><span class="badge">로빈테크 × 청연컨설팅</span></div>
+        <div class="badge-row"><span class="badge indigo">일반 외주 견적의 1/10</span></div>
         <p class="desc">업무에 꼭 맞는 소프트웨어와 AI 에이전트를 만듭니다. 기술 용어를 몰라도 괜찮아요. 필요한 것을 설명해 주시면 스펙과 견적을 제안하고, 승인하면 바로 개발을 시작합니다.</p>
         <div class="steps">
           <div><p style="margin:0"><b>의뢰</b><span>필요한 소프트웨어를 편하게 설명</span></p></div>
@@ -353,10 +353,6 @@ def build_index():
           <div class="value"><i>🛠</i><p style="margin:0"><b>끝까지 책임지는 SI</b><span>납품 후에도 같은 팀이 운영하고 키웁니다.</span></p></div>
           <div class="value"><i>🤖</i><p style="margin:0"><b>AI 에이전트 네이티브</b><span>스펙부터 PR까지 에이전트와 함께 일하는 개발 체계.</span></p></div>
           <div class="value"><i>☁️</i><p style="margin:0"><b>자체 클라우드</b><span>배포 · DB · 도메인 · 모니터링을 한 콘솔에서.</span></p></div>
-        </div>
-        <div class="partner">
-          <b>RobinTech</b><span class="x">×</span>
-          <div><b>청연컨설팅</b><p>요구사항 분석부터 구현 · 유지보수까지 SW 엔지니어링 파트너</p></div>
         </div>
       </div>
       <div class="ceo reveal">
