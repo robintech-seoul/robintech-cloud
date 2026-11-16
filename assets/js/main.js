@@ -55,3 +55,35 @@
     });
   });
 })();
+
+/* 히어로 광고 영상: 소리 없이 자동 반복 재생, 버튼으로 소리 켜기 */
+(function () {
+  var fig = document.querySelector('.hero-video');
+  if (!fig) return;
+  var video = fig.querySelector('video');
+  var btn = fig.querySelector('.video-sound');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay');
+    video.pause();
+    video.controls = true;
+    if (btn) btn.hidden = true;
+    return;
+  }
+  if (!btn) return;
+  var setState = function (on) {
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.querySelector('.ic').textContent = on ? '🔊' : '🔇';
+    btn.querySelector('.lbl').textContent = on ? '소리 끄기' : '소리 켜기';
+  };
+  btn.addEventListener('click', function () {
+    var turnOn = video.muted;
+    video.muted = !turnOn;
+    if (turnOn) {
+      video.currentTime = 0;
+      if (typeof window.gtag === 'function') window.gtag('event', 'ad_video_sound_on', { location: 'hero' });
+    }
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+    setState(turnOn);
+  });
+})();
