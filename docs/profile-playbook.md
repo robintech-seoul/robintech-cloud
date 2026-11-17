@@ -31,15 +31,18 @@ spec · 설계 · 구현 · 판정 단계 모두 이 문서를 따릅니다.
 
 ## 3. 만드는 규칙
 
-- **폴더:** `profile/<slug>/index.html`, `style.css`, `thumb.jpg`. 폴더 안에서 완결되는 독립 사이트(상대 경로)라
+- **폴더:** `profile/<slug>/index.html`, `style.css`, `thumb.jpg`, 사진을 담는 `img/`(출처 기록 `img/sources.txt` 포함). 폴더 안에서 완결되는 독립 사이트(상대 경로)라
   나중에 고객 도메인으로 그대로 옮길 수 있어야 합니다. `build.py` 는 이 폴더를 생성하지 않습니다.
 - **slug:** `<업종 key>-<가상 상호 로마자>` (예: `flower-bomgyeol`, `food-...`, `clinic-...`).
 - **업종 key:** `scripts/profiles.py` 의 `INDUSTRIES` (food, flower, clinic, beauty, kids, fitness, stay, pro).
 - **샘플 표시:** 첫 화면 어딘가에 "로빈테크 디자인 샘플 · 상호와 정보는 가상입니다", 푸터에 "Website by RobinTech".
   사진을 쓰면 푸터에 출처("Photos: Unsplash").
 - **`<meta name="robots" content="noindex">`** 를 넣습니다.
-- **글꼴:** Google Fonts 와 Pretendard(jsDelivr) 만. 영문 세리프는 숫자가 들쭉날쭉한 서체가 있으니 가격 · 숫자는 한글 서체로.
-- **사진:** 지금은 `images.unsplash.com/photo-...?w=..&q=80&auto=format&fit=crop` 로 직접 링크합니다(공개 전에 저장소로 옮길지 결정 예정).
+- **글꼴:** Google Fonts 와 Pretendard(jsDelivr) 만. 영문 세리프는 숫자가 들쭉날쭉한 서체가 있으니 가격 · 숫자는 숫자 폭이 고른 서체(한글 서체나 모노 서체)로.
+- **사진:** 고른 사진을 웹 크기(가로 2000px 이하, JPEG 또는 WebP, 한 장 500KB · 합계 3MB 이하)로 내려받아
+  `profile/<slug>/img/` 에 두고 상대 경로(`img/...`)로 씁니다. 외부 사진 주소를 직접 링크하지 않습니다.
+  `img/sources.txt` 에 사진마다 `<파일> <사진 페이지 URL> <내려받은 URL>` 한 줄을 적어 라이선스 출처를 남깁니다.
+  예외: `profile/flower-bomgyeol/` 은 후속 feature 가 사진을 옮기기 전까지 Unsplash 사진을 직접 링크합니다.
 - **국내 손님 동선:** 업종에 맞게 카카오톡 채널 상담, 네이버 예약, 네이버 지도, 전화 버튼 자리를 둡니다(링크는 `#` 자리표시).
 - **접근성:** 이미지 `alt`, 의미 있는 제목 순서, `prefers-reduced-motion` 에서 애니메이션 끄기.
 

@@ -1,0 +1,18 @@
+# AC11 shop-name check for 새벽밀 — 2026-11-18 (implement stage, T1)
+# Tools: web search tool (US-based, does not honour quotes strictly) and Naver web search
+# (search.naver.com, fetched with curl; reachable this time). No Naver Place/Map result appeared for any query.
+
+query: "새벽밀" 빵집 (web search)
+hits: no shop named 새벽밀. Nearest: Mi Mill (미밀, 광주), Maybell Bakery (이태원), 은행 베이커리 (시흥) — different names.
+query: "새벽밀" 베이커리 (web search)
+hits: no shop named 새벽밀. Nearest: 베즐리 베이커리, 밀도, 서애커피&Bread, 밀봄숲 — different names.
+query: "새벽밀" 카페 (web search)
+hits: no shop named 새벽밀. Nearest: 새벽다섯시 (안산), 새벽카페호르 (남양주) — different names.
+query: 새벽밀 빵집 (Naver)
+hits: one postype.com fiction post with the phrase "해가 뜨지 않은 새벽밀 빵" (2023-06-13), not a shop; no place listing.
+query: 새벽밀 베이커리 (Naver)
+hits: the same postype.com fiction post and shopping ads; no place listing.
+query: 새벽밀 카페 (Naver)
+hits: the same postype.com fiction post; no place listing.
+
+verdict: no match
