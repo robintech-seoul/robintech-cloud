@@ -1,7 +1,7 @@
 ---
 status: shipped
-approved_at: 3c164d3f11879ff3315e24e5bb646b69e154c1c2
-commits: 3c164d3f11879ff3315e24e5bb646b69e154c1c2..8c01a561b383b425feab6bd4f6bfb719ae55f024
+approved_at: 6a12639aeab41ffdda335c0ecfd6547f5ca42c93
+commits: 37ead1beda631e64c8ff4d1d09cf7061b741d488..6a12639aeab41ffdda335c0ecfd6547f5ca42c93
 ---
 
 # Restaurant · cafe profile sample (`food`)

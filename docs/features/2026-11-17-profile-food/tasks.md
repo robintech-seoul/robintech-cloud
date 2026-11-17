@@ -2,7 +2,7 @@
 status: shipped
 test: `python3 docs/features/2026-11-17-profile-food/check_static.py all`
 preflight(browser): `python3 -c "from playwright.sync_api import sync_playwright as s; p = s().start(); b = p.chromium.launch(channel='chrome'); b.close(); p.stop()" && python3 -c "import urllib.request as u; [u.urlopen(x, timeout=10) for x in ('https://fonts.googleapis.com/css2?family=Noto+Sans+KR', 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css')]"`
-commits: 3c164d3f11879ff3315e24e5bb646b69e154c1c2..8c01a561b383b425feab6bd4f6bfb719ae55f024
+commits: 37ead1beda631e64c8ff4d1d09cf7061b741d488..6a12639aeab41ffdda335c0ecfd6547f5ca42c93
 ---
 
 # Restaurant · cafe profile sample (`food`) — Tasks
@@ -47,11 +47,11 @@ is a change to approved checks and goes back to a person for re-approval.
 - [x] T10 Keep the branch inside its scope (AC6) — verify: `base="$(git merge-base feature/profile-gallery HEAD)" && test -n "$base" && test -z "$(git diff --name-only "$base" | grep -v -e '^profile/food-saebyeokmil/' -e '^profile/index\.html$' -e '^scripts/profiles\.py$' -e '^docs/')"`
 - [x] T11 Review the full-page screenshots for overlapping or clipped text (AC33·AC34) — verify(human): run `python3 docs/features/2026-11-17-profile-food/check_browser.py page`, then look at `/tmp/profile-food-shots/desktop-1440.png` and `/tmp/profile-food-shots/mobile-390.png` top to bottom
       reason: whether text overlaps or is clipped is a visual judgement over the whole rendered page; no command decides it reliably.
-      검토: PASS @c07c9b3eb3e56bb17916950d1ca9a3997b570cae #aeea9950 2026-11-18 — check_browser.py page 재실행(PASS) 뒤 1440x5991·390x9018 전체를 구간별로 봄, 겹치거나 잘린 글자 없음 (모바일 고정 바는 사진만 덮음)
+      검토: PASS @6a12639aeab41ffdda335c0ecfd6547f5ca42c93 #aeea9950 2026-11-18 — check_browser.py page 재실행(PASS) 뒤 1440x5991·390x9018 전체를 구간별로 봄, 겹치거나 잘린 글자 없음 (모바일 고정 바는 사진만 덮음)
       확인: Seokhyun Kim 2026-11-18
 - [x] T12 Compare the sample side by side with tartinebakery.com and with `profile/flower-bomgyeol/` (AC39·AC40·AC41) — verify(human): open `http://localhost:8000/profile/food-saebyeokmil/` (after `python3 -m http.server 8000`) next to https://www.tartinebakery.com and `http://localhost:8000/profile/flower-bomgyeol/`; confirm no shared text, logo, name or photo with Tartine, that it does not read as the same site as Tartine, and that it does not read as the same design as flower-bomgyeol
       reason: "reads as the same site / design" and copied logo or wording are taste judgements a person makes.
-      검토: PASS @c07c9b3eb3e56bb17916950d1ca9a3997b570cae #fe77ea58 2026-11-18 — Tartine 문구 grep 일치 없음·자체 SVG 로고·사진 dHash 최소 100+/256; 히어로 구조·서체·강조색이 Tartine·flower-bomgyeol 과 다름
+      검토: PASS @6a12639aeab41ffdda335c0ecfd6547f5ca42c93 #fe77ea58 2026-11-18 — Tartine 문구 grep 일치 없음·자체 SVG 로고·사진 dHash 최소 100+/256; 히어로 구조·서체·강조색이 Tartine·flower-bomgyeol 과 다름
       확인: Seokhyun Kim 2026-11-18
 
 Always last, never removed:
