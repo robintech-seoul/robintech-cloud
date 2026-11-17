@@ -2,7 +2,8 @@
 """로빈테크 홈페이지 정적 페이지 생성기.
 
 사용법: python3 scripts/build.py
-생성물: index.html, cases/index.html, cases/<slug>/index.html, 404.html
+생성물: index.html, cases/index.html, cases/<slug>/index.html, profile/index.html, 404.html
+(profile/<slug>/ 샘플 사이트는 손으로 만드는 파일이라 생성하지 않습니다.)
 외부 의존성 없음 (Python 3.9+).
 """
 from html import escape as e
@@ -12,6 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from cases import CASES  # noqa: E402
+from profiles import INDUSTRIES, PROFILES  # noqa: E402
 
 SITE = {
     "name": "로빈테크",
@@ -95,6 +97,7 @@ def header(base, current=""):
     </a>
     <nav class="nav-links" aria-label="주 메뉴">
       {link(f"{home}#services", "서비스", "services")}
+      {link(f"{base}profile/", "홈페이지 제작", "profile")}
       {link(f"{home}#pricing", "요금", "pricing")}
       {link(f"{base}cases/", "강의 · 컨설팅", "cases")}
       {link(f"{home}#about", "회사 소개", "about")}
@@ -592,6 +595,141 @@ def build_privacy():
     (out / "index.html").write_text(html, encoding="utf-8")
 
 
+# ---------------------------------------------------------------- profile gallery
+ICON_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>'
+ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+ICON_DESKTOP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>'
+ICON_MOBILE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>'
+
+
+def profile_card(p, label):
+    slug = p["slug"]
+    thumb = ROOT / "profile" / slug / "thumb.jpg"
+    if thumb.exists():
+        visual = f'<img src="{slug}/thumb.jpg" alt="" loading="lazy" width="1200" height="750">'
+    else:
+        bg, fg = p["palette"][0], p["palette"][1]
+        visual = f'<span class="pf-fallback" style="--a:{bg};--b:{fg}">{e(p["name"])}</span>'
+    dots = "".join(f'<i style="background:{c}"></i>' for c in p["palette"])
+    demo = '<span class="pf-tag">가상 상호 샘플</span>' if p.get("demo") else ""
+    return f"""<a class="pf-card reveal" href="{slug}/" data-industry="{p['industry']}" data-slug="{slug}">
+  <span class="pf-shot">{visual}<span class="pf-open">미리보기</span></span>
+  <span class="pf-info">
+    <span class="pf-row"><b>{e(p['title'])}</b><span class="pf-palette" aria-hidden="true">{dots}</span></span>
+    <span class="pf-meta">{e(label)} · {e(p['name'])}{demo}</span>
+  </span>
+</a>"""
+
+
+def empty_card(key, label):
+    return f"""<div class="pf-card pf-empty reveal" data-industry="{key}" aria-label="{e(label)} 프로파일 준비 중">
+  <span class="pf-shot"><span class="pf-soon"><b>{e(label)}</b><span>디자인 준비 중</span></span></span>
+  <span class="pf-info"><span class="pf-row"><b>{e(label)} 프로파일</b></span><span class="pf-meta">곧 공개됩니다</span></span>
+</div>"""
+
+
+def build_profile_list():
+    import json
+    base = "../"
+    labels = dict(INDUSTRIES)
+    live = [p for p in PROFILES if p["status"] == "live"]
+    for p in live:
+        if p["industry"] not in labels:
+            raise SystemExit(f"profiles.py: {p['slug']} 의 industry '{p['industry']}' 가 INDUSTRIES 에 없습니다")
+
+    counts = {k: sum(1 for p in live if p["industry"] == k) for k, _ in INDUSTRIES}
+    chips = [f'<button type="button" data-filter="all" aria-pressed="true">전체 <sup>{len(live)}</sup></button>']
+    chips += [f'<button type="button" data-filter="{k}" aria-pressed="false">{e(v)}{f" <sup>{counts[k]}</sup>" if counts[k] else ""}</button>' for k, v in INDUSTRIES]
+
+    cards = [profile_card(p, labels[p["industry"]]) for p in live]
+    cards += [empty_card(k, v) for k, v in INDUSTRIES if counts[k] == 0]
+
+    data = {p["slug"]: {
+        "title": p["title"], "name": p["name"], "industry": labels[p["industry"]],
+        "summary": p["summary"], "features": p["features"], "palette": p["palette"], "demo": bool(p.get("demo")),
+    } for p in live}
+    data_json = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+
+    desc = "꽃집, 식당, 병원, 키즈카페 등 업종별로 설계한 로빈테크 홈페이지 디자인 프로파일. 마음에 드는 디자인을 골라 우리 가게 홈페이지로 만들어 보세요."
+    body = f"""
+<main class="pf">
+<section class="pf-hero">
+  <div class="container">
+    <span class="eyebrow">Homepage Profiles</span>
+    <h1>우리 가게에 어울리는 홈페이지,<br><em>디자인부터 골라 보세요</em></h1>
+    <p class="lead">업종마다 손님이 찾는 정보와 분위기가 다릅니다. 로빈테크가 업종별로 설계한 디자인을 둘러보고 마음에 드는 것을 고르시면, 매장 정보와 사진으로 바꿔 빠르게 만들고 Robin Cloud에서 운영까지 맡습니다.</p>
+    <ul class="pf-points">
+      <li>업종별 맞춤 디자인</li><li>모바일 최적화</li><li>예약 · 주문 · 지도 연동</li><li>Robin Cloud 운영 · 관리</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pf-gallery" aria-labelledby="pf-gallery-title">
+  <div class="container">
+    <h2 id="pf-gallery-title" class="sr-only">업종별 프로파일</h2>
+    <div class="pf-filters" role="group" aria-label="업종 분류">{''.join(chips)}</div>
+    <div class="pf-grid" id="pf-grid">
+{chr(10).join(cards)}
+    </div>
+    <p class="pf-note">카드를 누르면 실제 화면을 데스크톱 · 모바일로 미리 볼 수 있습니다. 샘플의 상호와 정보는 디자인 예시를 위한 가상 정보입니다.</p>
+  </div>
+</section>
+
+<section class="pf-cta">
+  <div class="container">
+    <div class="pf-cta-box">
+      <div>
+        <h2>찾는 업종이 없어도 괜찮아요</h2>
+        <p>가게 이야기를 들려주시면 업종과 분위기에 맞는 디자인을 제안해 드립니다.</p>
+      </div>
+      <div class="pf-cta-actions">
+        <a class="btn btn-accent" href="{base}index.html#contact">홈페이지 제작 상담</a>
+        <a class="btn btn-ghost" href="mailto:{SITE['email']}">{SITE['email']}</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="pf-viewer" id="pf-viewer" hidden>
+  <div class="pf-v-backdrop" data-close></div>
+  <div class="pf-v-dialog" role="dialog" aria-modal="true" aria-labelledby="pf-v-title">
+    <div class="pf-v-stage">
+      <div class="pf-v-bar">
+        <span class="pf-v-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="pf-v-url" id="pf-v-url"></span>
+        <span class="pf-v-device" role="group" aria-label="화면 크기">
+          <button type="button" data-device="desktop" aria-pressed="true" aria-label="데스크톱 화면">{ICON_DESKTOP}</button>
+          <button type="button" data-device="mobile" aria-pressed="false" aria-label="모바일 화면">{ICON_MOBILE}</button>
+        </span>
+      </div>
+      <div class="pf-v-frame" data-device="desktop"><iframe id="pf-v-iframe" title="홈페이지 미리보기" loading="lazy"></iframe></div>
+    </div>
+    <aside class="pf-v-side">
+      <button type="button" class="pf-v-close" data-close aria-label="미리보기 닫기">{ICON_CLOSE}</button>
+      <span class="pf-v-industry" id="pf-v-industry"></span>
+      <h2 id="pf-v-title"></h2>
+      <p class="pf-v-name" id="pf-v-name"></p>
+      <p class="pf-v-summary" id="pf-v-summary"></p>
+      <h3>포함 기능</h3>
+      <ul class="pf-v-features" id="pf-v-features"></ul>
+      <h3>컬러</h3>
+      <div class="pf-v-palette" id="pf-v-palette"></div>
+      <div class="pf-v-actions">
+        <a class="btn btn-accent" href="{base}index.html#contact">이 디자인으로 상담하기</a>
+        <a class="btn btn-ghost" id="pf-v-newtab" href="#" target="_blank" rel="noopener">새 탭에서 열기 {ICON_ARROW}</a>
+      </div>
+    </aside>
+  </div>
+</div>
+<script type="application/json" id="pf-data">{data_json}</script>
+"""
+    html = head("홈페이지 제작 프로파일 — 로빈테크", desc, base) + header(base, "profile") + body + footer(base)
+    out = ROOT / "profile"
+    out.mkdir(exist_ok=True)
+    (out / "index.html").write_text(html, encoding="utf-8")
+
+
 def build_404():
     # GitHub Pages 404는 어떤 경로에서든 열리므로 절대 경로 사용
     base = "/"
@@ -614,9 +752,10 @@ def main():
     for i, c in enumerate(CASES):
         others = [CASES[(i + k) % len(CASES)] for k in (1, 2, 3)]
         build_case_detail(c, others)
+    build_profile_list()
     build_404()
     build_privacy()
-    print(f"built index, cases list, {len(CASES)} case pages, privacy, 404")
+    print(f"built index, cases list, {len(CASES)} case pages, profile gallery ({len(PROFILES)}), privacy, 404")
 
 
 if __name__ == "__main__":

@@ -6,13 +6,16 @@
 
 - `index.html`: 메인 페이지. 서비스(ax, Robin Cloud), 요금, 사례, 회사 소개, 문의 섹션이 있습니다.
 - `cases/`: 강의·컨설팅 사례 목록(`cases/index.html`)과 사례별 상세 페이지(`cases/<slug>/index.html`)
+- `profile/`: 홈페이지 제작 프로파일 갤러리(`profile/index.html`, 생성물)와 업종별 샘플 사이트(`profile/<slug>/`, 손으로 만드는 독립 사이트)
 - `assets/`: CSS, JS, 로고 이미지
 - `scripts/cases.py`: 사례 데이터. 사례를 추가하거나 고칠 때 이 파일을 수정합니다.
+- `scripts/profiles.py`: 프로파일 데이터(업종 목록, 프로파일 목록). 프로파일 추가 방법이 파일 맨 위에 있습니다.
+- `scripts/profile_thumb.py`: 샘플 사이트의 갤러리 썸네일(`thumb.jpg`)을 헤드리스 Chrome으로 찍습니다.
 - `scripts/build.py`: HTML 생성기. 외부 의존성이 없습니다.
 
 ## 수정하는 방법
 
-`*.html` 파일은 생성 결과물이라 직접 고치지 않습니다. 사례는 `scripts/cases.py`에서, 그 밖의 문구·레이아웃·연락처는 `scripts/build.py`에서 고친 뒤 다시 생성합니다.
+`*.html` 파일은 생성 결과물이라 직접 고치지 않습니다(예외: `profile/<slug>/` 샘플 사이트는 직접 만들고, build.py가 건드리지 않습니다). 사례는 `scripts/cases.py`에서, 그 밖의 문구·레이아웃·연락처는 `scripts/build.py`에서 고친 뒤 다시 생성합니다.
 
 ```bash
 python3 scripts/build.py

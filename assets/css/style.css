@@ -358,3 +358,146 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.25; letter-spacing: -0.02em; }
 .contact-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 880px; margin: 0 auto; }
 .contact-grid.cols-2 + .contact-guide { max-width: 880px; margin-left: auto; margin-right: auto; }
 @media (max-width: 860px) { .contact-grid.cols-2 { grid-template-columns: 1fr; } }
+
+/* ================================================================
+   Homepage profiles gallery (profile/index.html) — pf-*
+   샘플 디자인이 돋보이도록 갤러리 자체는 중립 톤으로 둡니다.
+   ================================================================ */
+.pf-hero { padding: 72px 0 40px; }
+.pf-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 850; letter-spacing: -0.035em; margin: 4px 0 20px; }
+.pf-hero h1 em { font-style: normal; color: var(--accent); }
+.pf-hero .lead { font-size: clamp(16px, 1.5vw, 18px); color: var(--ink-2); max-width: 680px; }
+.pf-points { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.pf-points li { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.pf-points li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+.pf-gallery { padding: 8px 0 88px; }
+.pf-filters {
+  position: sticky; top: 68px; z-index: 5; display: flex; gap: 8px; overflow-x: auto;
+  padding: 14px 0; margin-bottom: 18px; background: var(--bg); scrollbar-width: none;
+}
+.pf-filters::-webkit-scrollbar { display: none; }
+.pf-filters button {
+  flex: none; height: 38px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line);
+  background: #fff; color: var(--ink-2); font: 600 14px/1 var(--font); cursor: pointer; transition: background .15s, color .15s;
+}
+.pf-filters button sup { font-size: 10px; font-weight: 700; color: var(--muted); margin-left: 2px; vertical-align: super; }
+.pf-filters button:hover { border-color: #d8cdc2; }
+.pf-filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pf-filters button[aria-pressed="true"] sup { color: rgba(255,255,255,.65); }
+
+.pf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 24px; }
+.pf-card { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.pf-card[hidden] { display: none; }
+.pf-shot {
+  position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden;
+  background: #f1ede8; box-shadow: 0 0 0 1px rgba(41,22,42,.08), 0 1px 2px rgba(41,22,42,.04);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.pf-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+a.pf-card:hover .pf-shot { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(41,22,42,.08), 0 18px 40px rgba(41,22,42,.14); }
+.pf-open {
+  position: absolute; right: 14px; bottom: 14px; padding: 8px 14px; border-radius: 999px;
+  background: rgba(20,14,20,.82); color: #fff; font-size: 13px; font-weight: 700;
+  opacity: 0; transform: translateY(6px); transition: opacity .2s, transform .2s;
+}
+a.pf-card:hover .pf-open, a.pf-card:focus-visible .pf-open { opacity: 1; transform: none; }
+.pf-fallback {
+  display: grid; place-items: center; width: 100%; height: 100%;
+  background: var(--a); color: var(--b); font-size: 26px; font-weight: 800; letter-spacing: -0.02em;
+}
+.pf-info { display: flex; flex-direction: column; gap: 4px; padding: 0 2px; }
+.pf-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pf-row b { font-size: 16px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pf-palette { display: inline-flex; flex: none; }
+.pf-palette i { width: 14px; height: 14px; border-radius: 50%; margin-left: -4px; box-shadow: 0 0 0 2px var(--bg), inset 0 0 0 1px rgba(0,0,0,.08); }
+.pf-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 13px; color: var(--muted); }
+.pf-tag { padding: 2px 8px; border-radius: 999px; background: var(--bg-2); border: 1px solid var(--line); font-size: 11px; font-weight: 600; }
+
+.pf-empty .pf-shot {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(41,22,42,.025) 14px 15px),
+    var(--bg-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.pf-soon { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.pf-soon b { font-size: 20px; font-weight: 800; color: var(--ink-2); }
+.pf-soon span { font-size: 13px; color: var(--muted); }
+.pf-empty .pf-row b { color: var(--ink-2); font-weight: 600; }
+
+.pf-note { margin: 48px 0 0; font-size: 13px; color: var(--muted); text-align: center; }
+
+.pf-cta { padding: 0 0 104px; }
+.pf-cta-box {
+  display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
+  padding: 44px 48px; border-radius: 24px; background: var(--ink); color: #fff;
+}
+.pf-cta-box h2 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; }
+.pf-cta-box p { margin: 10px 0 0; color: #d9cdda; }
+.pf-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.pf-cta-box .btn-ghost { color: #fff; border-color: rgba(255,255,255,.25); }
+.pf-cta-box .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+@media (max-width: 980px) { .pf-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) {
+  .pf-hero { padding: 48px 0 24px; }
+  .pf-grid { grid-template-columns: 1fr; gap: 28px; }
+  .pf-filters { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
+  .pf-open { opacity: 1; transform: none; }
+  .pf-empty .pf-shot { aspect-ratio: 16 / 6; }
+  .pf-cta-box { padding: 32px 24px; }
+  .pf-cta-actions .btn { flex: 1 1 auto; }
+}
+
+/* Preview viewer */
+.pf-lock { overflow: hidden; }
+.pf-viewer { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.pf-viewer[hidden] { display: none; }
+.pf-v-backdrop { position: absolute; inset: 0; background: rgba(20,14,20,.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.pf-v-dialog {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 340px;
+  width: min(1440px, 100%); height: min(900px, 100%); border-radius: 18px; overflow: hidden;
+  background: #fff; box-shadow: 0 30px 80px rgba(0,0,0,.35);
+}
+.pf-v-stage { display: flex; flex-direction: column; min-width: 0; background: #ebe7e2; }
+.pf-v-bar { display: flex; align-items: center; gap: 14px; height: 48px; padding: 0 14px; background: #f6f3ef; border-bottom: 1px solid var(--line); }
+.pf-v-dots { display: inline-flex; gap: 6px; }
+.pf-v-dots i { width: 10px; height: 10px; border-radius: 50%; background: #ddd5cd; }
+.pf-v-url { flex: 1; min-width: 0; height: 28px; line-height: 28px; padding: 0 12px; border-radius: 8px; background: #fff; font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pf-v-device { display: inline-flex; padding: 3px; border-radius: 10px; background: #fff; border: 1px solid var(--line); }
+.pf-v-device button { width: 34px; height: 28px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); cursor: pointer; display: grid; place-items: center; }
+.pf-v-device button svg { width: 18px; height: 18px; }
+.pf-v-device button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.pf-v-frame { flex: 1; min-height: 0; display: flex; justify-content: center; overflow: hidden; }
+.pf-v-frame iframe { width: 100%; height: 100%; border: 0; background: #fff; transition: width .3s ease; }
+.pf-v-frame[data-device="mobile"] { padding: 20px 0; }
+.pf-v-frame[data-device="mobile"] iframe { width: 390px; max-width: 100%; border-radius: 28px; box-shadow: 0 0 0 10px #1d171d, 0 20px 50px rgba(0,0,0,.25); }
+.pf-v-side { position: relative; display: flex; flex-direction: column; padding: 28px 26px; overflow-y: auto; border-left: 1px solid var(--line); }
+.pf-v-close { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--bg-2); color: var(--ink); cursor: pointer; display: grid; place-items: center; }
+.pf-v-close svg { width: 20px; height: 20px; }
+.pf-v-industry { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; }
+.pf-v-side h2 { font-size: 24px; font-weight: 800; margin: 14px 48px 6px 0; }
+.pf-v-name { font-size: 14px; color: var(--muted); margin: 0 0 16px; }
+.pf-v-summary { font-size: 15px; color: var(--ink-2); line-height: 1.7; }
+.pf-v-side h3 { font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--muted); margin: 12px 0 10px; }
+.pf-v-features { list-style: none; padding: 0; margin: 0 0 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+.pf-v-features li { font-size: 13px; font-weight: 600; padding: 5px 11px; border-radius: 8px; background: var(--bg-2); border: 1px solid var(--line); }
+.pf-v-palette { display: flex; gap: 8px; margin-bottom: 8px; }
+.pf-v-palette span { display: flex; flex-direction: column; align-items: center; gap: 4px; font: 11px var(--mono); color: var(--muted); }
+.pf-v-palette i { width: 36px; height: 36px; border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+.pf-v-actions { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+.pf-v-actions .btn svg { width: 16px; height: 16px; }
+
+@media (max-width: 860px) {
+  .pf-viewer { padding: 0; }
+  .pf-v-dialog { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; width: 100%; height: 100%; border-radius: 0; }
+  .pf-v-bar { display: none; }
+  .pf-v-frame[data-device] { padding: 0; }
+  .pf-v-frame[data-device] iframe { width: 100%; border-radius: 0; box-shadow: none; }
+  .pf-v-side { border-left: 0; border-top: 1px solid var(--line); padding: 16px; max-height: 40vh; }
+  .pf-v-side h2 { font-size: 18px; margin-top: 8px; }
+  .pf-v-name, .pf-v-summary, .pf-v-side h3, .pf-v-features, .pf-v-palette { display: none; }
+  .pf-v-close { top: 10px; right: 10px; }
+  .pf-v-actions { flex-direction: row; padding-top: 12px; }
+  .pf-v-actions .btn { flex: 1; padding: 0 12px; font-size: 14px; }
+}
