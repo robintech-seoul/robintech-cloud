@@ -639,7 +639,7 @@ def build_profile_list():
 
     counts = {k: sum(1 for p in live if p["industry"] == k) for k, _ in INDUSTRIES}
     chips = [f'<button type="button" data-filter="all" aria-pressed="true">전체 <sup>{len(live)}</sup></button>']
-    chips += [f'<button type="button" data-filter="{k}" aria-pressed="false">{e(v)} <sup>{counts[k]}</sup></button>' for k, v in INDUSTRIES]
+    chips += [f'<button type="button" data-filter="{k}" aria-pressed="false">{e(v)}{f" <sup>{counts[k]}</sup>" if counts[k] else ""}</button>' for k, v in INDUSTRIES]
 
     cards = [profile_card(p, labels[p["industry"]]) for p in live]
     cards += [empty_card(k, v) for k, v in INDUSTRIES if counts[k] == 0]

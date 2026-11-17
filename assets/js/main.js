@@ -119,6 +119,7 @@
   var deviceBtns = viewer.querySelectorAll('[data-device]');
   var lastFocus = null;
   var current = null;
+  var pushed = false;
 
   var setDevice = function (d) {
     frame.setAttribute('data-device', d);
@@ -130,7 +131,7 @@
     if (b.tagName === 'BUTTON') b.addEventListener('click', function () { setDevice(b.getAttribute('data-device')); });
   });
 
-  var open = function (slug, opener) {
+  var open = function (slug, opener, fromNav) {
     var p = data[slug];
     if (!p) return;
     current = slug;
@@ -153,20 +154,34 @@
     iframe.src = url.href;
     viewer.hidden = false;
     document.documentElement.classList.add('pf-lock');
-    if (location.hash !== '#' + slug) history.replaceState(null, '', '#' + slug);
+    if (!fromNav && location.hash !== '#' + slug) { history.pushState(null, '', '#' + slug); pushed = true; }
     viewer.querySelector('.pf-v-close').focus();
     if (typeof window.gtag === 'function') window.gtag('event', 'profile_preview', { profile: slug });
   };
 
-  var close = function () {
+  var hide = function () {
     if (viewer.hidden) return;
     viewer.hidden = true;
     iframe.src = 'about:blank';
     current = null;
     document.documentElement.classList.remove('pf-lock');
-    history.replaceState(null, '', location.pathname + location.search);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   };
+  // 열 때 history 항목을 쌓아 두므로 휴대폰 뒤로 가기로도 닫힙니다.
+  var close = function () {
+    if (viewer.hidden) return;
+    if (pushed) { pushed = false; history.back(); return; }
+    hide();
+    history.replaceState(null, '', location.pathname + location.search);
+  };
+  // 미리보기 안을 클릭한 뒤에도 Esc 로 닫히게 (같은 출처 iframe)
+  iframe.addEventListener('load', function () {
+    try {
+      iframe.contentWindow.document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') close();
+      });
+    } catch (err) { /* 다른 출처면 무시 */ }
+  });
 
   grid.addEventListener('click', function (ev) {
     var card = ev.target.closest('a.pf-card[data-slug]');
@@ -192,9 +207,10 @@
 
   var fromHash = function () {
     var slug = decodeURIComponent(location.hash.slice(1));
-    if (slug && data[slug]) { if (slug !== current) open(slug); }
-    else close();
+    if (slug && data[slug]) { if (slug !== current) open(slug, null, true); }
+    else { pushed = false; hide(); }
   };
+  window.addEventListener('popstate', fromHash);
   window.addEventListener('hashchange', fromHash);
   fromHash();
 })();
