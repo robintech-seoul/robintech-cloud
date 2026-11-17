@@ -87,3 +87,114 @@
     setState(turnOn);
   });
 })();
+
+/* 홈페이지 프로파일 갤러리: 업종 필터 + 미리보기 뷰어 (profile/index.html) */
+(function () {
+  var grid = document.getElementById('pf-grid');
+  if (!grid) return;
+
+  var chips = document.querySelectorAll('.pf-filters button');
+  chips.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      chips.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      grid.querySelectorAll('.pf-card').forEach(function (card) {
+        var show = f === 'all' || card.getAttribute('data-industry') === f;
+        card.hidden = !show;
+        if (show) card.classList.add('in');
+      });
+    });
+  });
+
+  var viewer = document.getElementById('pf-viewer');
+  var dataEl = document.getElementById('pf-data');
+  if (!viewer || !dataEl) return;
+  var data = {};
+  try { data = JSON.parse(dataEl.textContent); } catch (err) { return; }
+
+  var $ = function (id) { return document.getElementById(id); };
+  var iframe = $('pf-v-iframe');
+  var frame = viewer.querySelector('.pf-v-frame');
+  var dialog = viewer.querySelector('.pf-v-dialog');
+  var deviceBtns = viewer.querySelectorAll('[data-device]');
+  var lastFocus = null;
+  var current = null;
+
+  var setDevice = function (d) {
+    frame.setAttribute('data-device', d);
+    deviceBtns.forEach(function (b) {
+      if (b.tagName === 'BUTTON') b.setAttribute('aria-pressed', b.getAttribute('data-device') === d ? 'true' : 'false');
+    });
+  };
+  deviceBtns.forEach(function (b) {
+    if (b.tagName === 'BUTTON') b.addEventListener('click', function () { setDevice(b.getAttribute('data-device')); });
+  });
+
+  var open = function (slug, opener) {
+    var p = data[slug];
+    if (!p) return;
+    current = slug;
+    lastFocus = opener || document.activeElement;
+    var url = new URL(slug + '/', location.href);
+    $('pf-v-industry').textContent = p.industry;
+    $('pf-v-title').textContent = p.title;
+    $('pf-v-name').textContent = p.name + (p.demo ? ' · 가상 상호 샘플' : '');
+    $('pf-v-summary').textContent = p.summary;
+    $('pf-v-url').textContent = url.host + url.pathname;
+    $('pf-v-newtab').href = url.href;
+    var ul = $('pf-v-features'); ul.textContent = '';
+    p.features.forEach(function (f) { var li = document.createElement('li'); li.textContent = f; ul.appendChild(li); });
+    var pal = $('pf-v-palette'); pal.textContent = '';
+    p.palette.forEach(function (c) {
+      var s = document.createElement('span'), i = document.createElement('i');
+      i.style.background = c; s.appendChild(i); s.appendChild(document.createTextNode(c)); pal.appendChild(s);
+    });
+    setDevice('desktop');
+    iframe.src = url.href;
+    viewer.hidden = false;
+    document.documentElement.classList.add('pf-lock');
+    if (location.hash !== '#' + slug) history.replaceState(null, '', '#' + slug);
+    viewer.querySelector('.pf-v-close').focus();
+    if (typeof window.gtag === 'function') window.gtag('event', 'profile_preview', { profile: slug });
+  };
+
+  var close = function () {
+    if (viewer.hidden) return;
+    viewer.hidden = true;
+    iframe.src = 'about:blank';
+    current = null;
+    document.documentElement.classList.remove('pf-lock');
+    history.replaceState(null, '', location.pathname + location.search);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+
+  grid.addEventListener('click', function (ev) {
+    var card = ev.target.closest('a.pf-card[data-slug]');
+    if (!card || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button === 1) return;
+    ev.preventDefault();
+    open(card.getAttribute('data-slug'), card);
+  });
+  viewer.querySelectorAll('[data-close]').forEach(function (el) { el.addEventListener('click', close); });
+
+  document.addEventListener('keydown', function (ev) {
+    if (viewer.hidden) return;
+    if (ev.key === 'Escape') { ev.preventDefault(); close(); return; }
+    if (ev.key !== 'Tab') return;
+    var f = Array.prototype.filter.call(
+      dialog.querySelectorAll('button, a[href], iframe'),
+      function (el) { return el.offsetParent !== null; }
+    );
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (ev.shiftKey && document.activeElement === first) { ev.preventDefault(); last.focus(); }
+    else if (!ev.shiftKey && document.activeElement === last) { ev.preventDefault(); first.focus(); }
+  });
+
+  var fromHash = function () {
+    var slug = decodeURIComponent(location.hash.slice(1));
+    if (slug && data[slug]) { if (slug !== current) open(slug); }
+    else close();
+  };
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+})();
