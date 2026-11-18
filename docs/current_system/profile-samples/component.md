@@ -23,4 +23,4 @@ How a sample is researched, built and checked: `docs/profile-playbook.md`.
 
 | Component | Used for |
 | --- | --- |
-| (none) | Samples load only Google Fonts and Pretendard (jsDelivr). Photos are free-licence Unsplash/Pexels images kept in `profile/<slug>/img/` with `img/sources.txt`; `flower-bomgyeol` still hotlinks Unsplash until its follow-up feature |
+| (none) | Samples load only Google Fonts and Pretendard (jsDelivr). Photos are free-licence Unsplash/Pexels images; every sample keeps them in `profile/<slug>/img/` with `img/sources.txt` |
