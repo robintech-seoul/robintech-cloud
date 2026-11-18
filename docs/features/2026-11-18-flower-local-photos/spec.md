@@ -1,7 +1,7 @@
 ---
 status: shipped
-approved_at: a9f9f246fef30eacf7a90b34aa97f105fe2eb88e
-commits: a9f9f246fef30eacf7a90b34aa97f105fe2eb88e..bf5d250c8b12d92caa5933ef84ecf7809ec46879
+approved_at: 408af13cfb6761c21a4ce4dc7b61a5cd16b24f31
+commits: b045fa1a02baa9986b2ca074a3572490c5a1a96e..408af13cfb6761c21a4ce4dc7b61a5cd16b24f31
 ---
 
 # Flower sample photos stored in the repository (`flower-bomgyeol`)

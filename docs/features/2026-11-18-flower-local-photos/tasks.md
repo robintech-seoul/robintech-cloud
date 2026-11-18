@@ -2,7 +2,7 @@
 status: shipped
 test: `python3 docs/features/2026-11-18-flower-local-photos/check_static.py all`
 preflight(browser): `python3 -c "from playwright.sync_api import sync_playwright as s; p = s().start(); b = p.chromium.launch(channel='chrome'); b.close(); p.stop()" && python3 -c "import urllib.request as u; [u.urlopen(x, timeout=10) for x in ('https://fonts.googleapis.com/css2?family=Noto+Serif+KR', 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css')]; [u.urlopen(l.split()[-1], timeout=20) for l in open('profile/flower-bomgyeol/img/sources.txt') if l.strip()]"`
-commits: a9f9f246fef30eacf7a90b34aa97f105fe2eb88e..bf5d250c8b12d92caa5933ef84ecf7809ec46879
+commits: b045fa1a02baa9986b2ca074a3572490c5a1a96e..408af13cfb6761c21a4ce4dc7b61a5cd16b24f31
 ---
 
 # Flower sample photos stored in the repository (`flower-bomgyeol`) — Tasks
@@ -35,7 +35,7 @@ Known side effect (spec Scope Out): after this change the shipped food feature's
 - [ ] T8 Review the screenshots T7 wrote for visual sameness (AC24·AC25) — verify(human): open `/tmp/flower-local-photos-shots/`. First confirm `summary.txt` ends with `result PASS`, its `site tree` equals the output of `git rev-parse HEAD:profile/flower-bomgyeol` and its site working tree is `clean`; if not (or if the folder is missing because browser checks have not run), the evidence is missing and the review is UNSURE, not FAIL. `side-1440.png` and `side-390.png` put the merge-base page (left, "merge-base") next to the branch page (right, "branch"); `side-1440-NN.png` and `side-390-NN.png` are the same images cut into 1200 px tall bands, to read at full size; `before-*.png` and `after-*.png` are the single pages; `summary.txt` lists each page height and, per `<img>`, alt text, natural size, box size and position (the script already fails on a natural-size difference). At each width confirm, band by band: (1) the two page heights in `summary.txt` are equal; (2) the nine photos appear in the same order — hero ranunculus and protea, bronze-vase centrepiece, dahlia and rose bouquet, pink peony, white snapdragon, rose and chrysanthemum, purple hydrangea, purple flower before a grey wall, candle-lit long table; (3) each photo shows the same subject with the same crop and framing; (4) text, sections and spacing line up between the two sides, header included. Slight colour or detail differences from JPEG against AVIF/WebP are not a difference; visible blocking or banding, for example on the re-encoded hero, is
       reason: whether two renderings show the same photo with the same crop is a visual judgement; a pixel diff cannot decide it, because the merge-base page gets AVIF or WebP from Unsplash while the branch serves JPEG (spec Assumptions).
       scope: profile/flower-bomgyeol
-      검토: PASS @3863930072c9268e484ab51a07a3abe21d35b63e #067662c4 2026-11-18 — summary.txt result PASS, site tree 2f9bd3c matches, clean; heights equal (1440: 5827/5827, 390: 6618/6618); all bands show the nine photos in the same order, crop and layout; full-size hero crops show no blocking or banding
+      검토: PASS @408af13cfb6761c21a4ce4dc7b61a5cd16b24f31 #067662c4 2026-11-18 — summary.txt result PASS, site tree 2f9bd3c matches, clean; heights equal (1440: 5827/5827, 390: 6618/6618); all bands show the nine photos in the same order, crop and layout; full-size hero crops show no blocking or banding
 
 Always last, never removed:
 
