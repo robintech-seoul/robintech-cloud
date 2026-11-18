@@ -2,7 +2,7 @@
 status: shipped
 test: `python3 docs/features/2026-11-18-gallery-industries/check.py all`
 preflight(browser): `python3 -c "from playwright.sync_api import sync_playwright as s; p = s().start(); b = p.chromium.launch(channel='chrome'); b.close(); p.stop()"`
-commits: b09e39c88995af0421db23a9101c256dc7057b78..670b2fb60345c2da3c9ea3a812767bd92d08a13d
+commits: b469c4348f1ee6bfcab4a76c1741d1ed48990afd..e8f2f6d60bb97eaf1901abdade5771210b5176f2
 ---
 
 # Gallery industry list (`INDUSTRIES`) — Tasks
