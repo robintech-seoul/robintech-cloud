@@ -1,7 +1,7 @@
 ---
 status: shipped
-approved_at: bbeb791fc4900b4152865f0083c228555e7ba479
-commits: bbeb791fc4900b4152865f0083c228555e7ba479..b9198105b10e6927a83abba1f903d20da55578a8
+approved_at: 8df6219df2c162683a74928a0a8628928d591f7b
+commits: 8a9a3b4182f9a77662f1265ba47c2eccbfd202ca..8df6219df2c162683a74928a0a8628928d591f7b
 ---
 
 # Law firm profile samples (`law`)
