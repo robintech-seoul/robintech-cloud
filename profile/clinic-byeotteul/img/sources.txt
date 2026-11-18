@@ -1,0 +1,5 @@
+hero-lounge.jpg https://unsplash.com/photos/FV3GConVSss https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1800&q=70&fm=jpg&fit=max
+lobby-tree.jpg https://unsplash.com/photos/X8Y3CJA0aNs https://images.unsplash.com/photo-1648775507324-b48dd3791fa5?w=1600&q=70&fm=jpg&fit=max
+window-plant.jpg https://unsplash.com/photos/VKGO-6yvc7M https://images.unsplash.com/photo-1614866798638-c3b6ba237478?w=1200&q=70&fm=jpg&fit=max
+consult-notes.jpg https://unsplash.com/photos/8WYkI3cEZm8 https://images.unsplash.com/photo-1758691461990-03b49d969495?w=1400&q=70&fm=jpg&fit=max
+clipboard.jpg https://unsplash.com/photos/7n2suA0AmjY https://images.unsplash.com/photo-1777805865927-a6ee4c4eacb1?w=1200&q=70&fm=jpg&fit=max
