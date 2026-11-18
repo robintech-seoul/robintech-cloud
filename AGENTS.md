@@ -102,7 +102,7 @@ and `system_design.md` are history — supersede them, don't edit them.
   generated HTML, then run `python3 scripts/build.py`.
 - `profile/<slug>/` holds hand-built, self-contained industry sample sites. The generator never
   writes there. How to make one, and when it is done: `docs/profile-playbook.md`.
-- Profile samples branch from and merge back into `feature/profile-gallery`
-  (pass `base=feature/profile-gallery`) until that branch is merged to `main`.
+- Profile samples branch from and merge back into `main` (omit `base=`). Merge their PRs
+  with a merge commit — the docs record SHAs.
 - Check pages through a local server (`python3 -m http.server 8000`). Opened as `file://`, the
   gallery preview shows a directory listing instead of the sample.
