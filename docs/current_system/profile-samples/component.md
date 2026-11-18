@@ -6,7 +6,7 @@ status: approved
 
 **Role:** The industry sample sites the gallery shows. Without them the gallery has nothing to preview.
 
-**Source:** `profile/<slug>/` (currently `flower-bomgyeol`, `food-saebyeokmil`, `clinic-neuru`, `clinic-byeotteul`, `clinic-bonui`; one industry may have several samples)
+**Source:** `profile/<slug>/` (currently `flower-bomgyeol`, `food-saebyeokmil`, `clinic-neuru`, `clinic-byeotteul`, `clinic-bonui`, `law-ganeum`, `law-goim`; one industry may have several samples)
 
 ## Public contract
 

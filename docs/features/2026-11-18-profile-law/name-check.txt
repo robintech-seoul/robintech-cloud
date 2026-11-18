@@ -1,0 +1,38 @@
+# AC13 name check, 2026-11-18, run in Chrome by the implement agent.
+# Kakao Map: map.kakao.com place search. Daum: search.daum.net total search. KBA: koreanbar.or.kr 변호사 검색 › 법인 검색 (법인명).
+# Naver was not searched.
+
+query: kakao-map 법무법인가늠
+hits: none ("검색 결과가 없어요", 0 places)
+query: kakao-map 가늠 법률
+hits: none (0 places)
+query: kakao-map 가늠 변호사
+hits: none (0 places)
+query: kakao-map 가늠 법률사무소
+hits: none (0 places)
+query: kakao-map 가늠
+hits: 10 places, none a law office: 가늠아트팩 (인쇄,복사), 가늠결 피피에스케이알 (기업), 가늠 (소프트웨어), 가늠쟁이 (지명), 새가늠골 (계곡), 가늠계기 (산업용품), 가늠재골 (계곡), 가늠이들 (지명), GS25 개봉가늠점 (편의점), GS25 개봉가늠점 ATM
+query: daum "법무법인 가늠"
+hits: an image strip and one ad block; no place card, no web document naming the firm
+query: kba 가늠
+hits: 0 results ("총 0건"; the site notes that dissolved firms are not listed)
+verdict: 법무법인 가늠 no match
+
+query: kakao-map 법무법인고임
+hits: none for the query; Kakao auto-corrected to 법무법인 호암 and listed that one firm (법무법인), a different name
+query: kakao-map 고임 법률
+hits: none (0 places)
+query: kakao-map 고임 변호사
+hits: none for the query; auto-corrected to 게임 변호사, one place: 법률사무소 창작 (변호사)
+query: kakao-map 고임 법률사무소
+hits: none (0 places)
+query: kakao-map 고임
+hits: 4 places, none a law office: 카페고임 (카페), 고임 (피부관리), 바이고임 (여성의류), 고임시스템 (컴퓨터판매)
+query: daum "법무법인 고임"
+hits: an image strip and one video about 물고임 defects in a house (posted by another firm); no place card, no web document naming the firm
+query: kba 고임
+hits: 0 results ("총 0건")
+verdict: 법무법인 고임 no match
+
+query: kba-control 호암
+hits: 1 result, 법무법인 호암 (서울 영등포구), so the search works
