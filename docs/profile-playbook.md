@@ -34,7 +34,11 @@ spec · 설계 · 구현 · 판정 단계 모두 이 문서를 따릅니다.
 - **폴더:** `profile/<slug>/index.html`, `style.css`, `thumb.jpg`, 사진을 담는 `img/`(출처 기록 `img/sources.txt` 포함). 폴더 안에서 완결되는 독립 사이트(상대 경로)라
   나중에 고객 도메인으로 그대로 옮길 수 있어야 합니다. `build.py` 는 이 폴더를 생성하지 않습니다.
 - **slug:** `<업종 key>-<가상 상호 로마자>` (예: `flower-bomgyeol`, `food-...`, `clinic-...`).
-- **업종 key:** `scripts/profiles.py` 의 `INDUSTRIES` (food, flower, clinic, beauty, kids, fitness, stay, pro).
+- **업종 key:** `scripts/profiles.py` 의 `INDUSTRIES` (law, clinic, fitness, beauty, interior, crypto, invest, food, flower).
+- **프랜차이즈 업종:** `fitness`(필라테스)와 `beauty`(미용실) 샘플은 한 매장이 아니라 프랜차이즈 본사 브랜드 사이트로 만듭니다.
+  지점을 고르는 매장 찾기와 가맹 문의 절을 둡니다.
+- **광고 규칙이 있는 업종:** `law`(법무법인) · `invest`(투자자문) · `crypto`(코인 · 가상자산) 샘플의 spec 은 그 업종의 광고 규칙을
+  조사해 지켜야 할 내용을 AC 로 적습니다. `clinic` 샘플의 spec 이 의료광고 규칙을 AC 로 적은 것과 같습니다.
 - **샘플 표시:** 첫 화면 어딘가에 "로빈테크 디자인 샘플 · 상호와 정보는 가상입니다", 푸터에 "Website by RobinTech".
   사진을 쓰면 푸터에 출처("Photos: Unsplash").
 - **`<meta name="robots" content="noindex">`** 를 넣습니다.
