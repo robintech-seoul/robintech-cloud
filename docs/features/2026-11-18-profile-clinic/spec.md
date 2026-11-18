@@ -1,7 +1,7 @@
 ---
 status: shipped
-approved_at: 590674ee87d1e6e6b015e32787e760a553a8da53
-commits: 590674ee87d1e6e6b015e32787e760a553a8da53..238036b4b8d5692d04e9536546da5cd8a1aab1af
+approved_at: 6dd13abc86ae69433d9b419015629f4e1a3327a3
+commits: 7a7ed55c4e37bddc5106e7c2e3dceef9a586c5ea..6dd13abc86ae69433d9b419015629f4e1a3327a3
 ---
 
 # Clinic profile samples (`clinic`)

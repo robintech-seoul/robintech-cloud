@@ -2,7 +2,7 @@
 status: shipped
 test: `python3 docs/features/2026-11-18-profile-clinic/check_static.py all`
 preflight(browser): `python3 -c "from playwright.sync_api import sync_playwright as s; p = s().start(); b = p.chromium.launch(channel='chrome'); b.close(); p.stop()" && python3 -c "import urllib.request as u; [u.urlopen(x, timeout=10) for x in ('https://fonts.googleapis.com/css2?family=Noto+Sans+KR', 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css')]"`
-commits: 590674ee87d1e6e6b015e32787e760a553a8da53..238036b4b8d5692d04e9536546da5cd8a1aab1af
+commits: 7a7ed55c4e37bddc5106e7c2e3dceef9a586c5ea..6dd13abc86ae69433d9b419015629f4e1a3327a3
 ---
 
 # Clinic profile samples (`clinic`) — Tasks
@@ -139,15 +139,15 @@ The accent is the last `palette` entry in `PROFILES` (AC53·AC54). Faces are Goo
 - [ ] T10 Review A's content and photos (AC12·AC26·AC27·AC28·AC29·AC31·AC63) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/clinic-neuru/` (command: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py page clinic-neuru`). Read `profile/clinic-neuru/index.html` and `profile/clinic-neuru/style.css` (for CSS `content:` text), open every image in `profile/clinic-neuru/img/` and the bands `desktop-1440-NN.png` and `mobile-390-NN.png` in that folder, and confirm each: (1) no patient review, testimonial, rating or star score; (2) no before-and-after photo or side-by-side comparison image; (3) no claim of a treatment result (cure, painlessness, guaranteed effect), no superlative or ranking (가장, 1등, 최첨단 and the like), no award, certification or endorsement claim or badge, no "○○ 전문" claim other than a 전문의 credential, no comparison with other clinics, no price-based enticement (discount, free treatment, event price, price comparison), no drug or device brand name (보톡스 and the like); (4) every person named as a doctor or practitioner, in any wording, has a visible marker containing 가상 next to the name; (5) every address on the page carries (가상 주소); (6) no photo shows an identifiable patient during treatment, and no photo of an identifiable person sits next to or is captioned as a named practitioner; (7) the hero photo shows an interior
       reason: whether copy promises a result, whether a photo is a before-and-after or shows a patient, and whether a hero photo is an interior are judgements about meaning; the static checks only catch listed words and fixed formats.
       scope: profile/clinic-neuru
-      reviewed: PASS @b3041a4 #65056b4b 2026-11-18 — (1)-(7) pass; footer index.html:216 '대표자 한서윤(가상 인물)', doctors :134/:143 marked, both addresses (가상 주소), no people in photos, hero is a waiting-room interior
+      reviewed: PASS @6dd13ab #65056b4b 2026-11-18 — (1)-(7) pass; footer index.html:216 '대표자 한서윤(가상 인물)', doctors :134/:143 marked, both addresses (가상 주소), no people in photos, hero is a waiting-room interior
 - [ ] T11 Review A's full-page screenshots for overlapping or clipped text (AC42·AC43) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/clinic-neuru/` (command as in T10). Look at `/tmp/profile-clinic-shots/clinic-neuru/desktop-1440-NN.png` and `mobile-390-NN.png` band by band and confirm: (1) at 1440, no text overlaps other text, an image or a control so that letters are hidden; (2) at 1440, no text is cut off at a box edge; (3) and (4) the same at 390. The fixed booking bar appears once in a full-page shot; what it covers there is not counted
       reason: whether text overlaps or is clipped is a visual judgement over the whole rendered page; no command decides it reliably.
       scope: profile/clinic-neuru
-      reviewed: PASS @b3041a4 #a3c217c3 2026-11-18 — desktop-1440-01..05 and mobile-390-01..06 plus band seams: no overlapping or clipped text; booking-bar cover excluded by rule
+      reviewed: PASS @6dd13ab #a3c217c3 2026-11-18 — desktop-1440-01..05 and mobile-390-01..06 plus band seams: no overlapping or clipped text; booking-bar cover excluded by rule
 - [ ] T12 Compare A with Studio Dental (AC50·AC51) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/compare/` for clinic-neuru and to `/tmp/profile-clinic-shots/clinic-neuru/` (commands: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py compare`, `check_browser.py page clinic-neuru`). Compare `clinic-neuru-1440.png` and `clinic-neuru-390.png` with `ref-clinic-neuru.png`, the bands of `/tmp/profile-clinic-shots/clinic-neuru/` with the `ref-clinic-neuru-full-NN.png` bands, and `ref-clinic-neuru.txt` with the text of `profile/clinic-neuru/index.html` (the reference is its home page), and confirm: (1) the sample shows no logo, wordmark or clinic name of the reference; (2) no sentence of the reference appears in the sample, translated or not; (3) no photo on the sample is one of the reference's photos; (4) the first screens differ in at least two of: hero composition (photo placement and size, where the headline sits), wordmark face and position, base and accent colour
       reason: copied wording or logos in another language, and "reads as the same site", are judgements a person makes.
       scope: profile/clinic-neuru
-      reviewed: PASS @b3041a4 #8f68d48e 2026-11-18 — no Studio Dental name, logo, sentence or photo; first screens differ in hero composition, wordmark and colours
+      reviewed: PASS @6dd13ab #8f68d48e 2026-11-18 — no Studio Dental name, logo, sentence or photo; first screens differ in hero composition, wordmark and colours
 
 ## Sample B — 볕뜰가정의학과의원 (`profile/clinic-byeotteul/`)
 
@@ -162,15 +162,15 @@ The accent is the last `palette` entry in `PROFILES` (AC53·AC54). Faces are Goo
 - [ ] T21 Review B's content and photos (AC12·AC26·AC27·AC28·AC29·AC31·AC75) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/clinic-byeotteul/` (command: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py page clinic-byeotteul`), read `profile/clinic-byeotteul/index.html` and `style.css`, open every image in its `img/` and the bands, and confirm items (1)–(6) of T10 for this sample, and (7) there is no login, sign-up, member, insurance-network or insurance-check control in any wording
       reason: whether copy promises a result, whether a photo is a before-and-after or shows a patient, and whether a control is a login or insurance control under another wording are judgements about meaning.
       scope: profile/clinic-byeotteul
-      reviewed: PASS @b3041a4 #4bf1dc7f 2026-11-18 — (1)-(7) pass; footer index.html:209 '대표자 윤해솔(가상 인물)', doctors :140/:145 marked, addresses (가상 주소), no identifiable person, no login or insurance control
+      reviewed: PASS @6dd13ab #4bf1dc7f 2026-11-18 — (1)-(7) pass; footer index.html:209 '대표자 윤해솔(가상 인물)', doctors :140/:145 marked, addresses (가상 주소), no identifiable person, no login or insurance control
 - [ ] T22 Review B's full-page screenshots for overlapping or clipped text (AC42·AC43) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/clinic-byeotteul/` (command: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py page clinic-byeotteul`), and confirm items (1)–(4) of T11 on `/tmp/profile-clinic-shots/clinic-byeotteul/desktop-1440-NN.png` and `mobile-390-NN.png`
       reason: whether text overlaps or is clipped is a visual judgement over the whole rendered page; no command decides it reliably.
       scope: profile/clinic-byeotteul
-      reviewed: PASS @b3041a4 #21440973 2026-11-18 — desktop-1440-01..04 and mobile-390-01..06 plus band seams: no overlapping or clipped text; booking-bar cover excluded by rule
+      reviewed: PASS @6dd13ab #21440973 2026-11-18 — desktop-1440-01..04 and mobile-390-01..06 plus band seams: no overlapping or clipped text; booking-bar cover excluded by rule
 - [ ] T23 Compare B with Tia (AC50·AC51) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/compare/` for clinic-byeotteul and to `/tmp/profile-clinic-shots/clinic-byeotteul/` (commands: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py compare`, `check_browser.py page clinic-byeotteul`). Compare `clinic-byeotteul-1440.png` and `clinic-byeotteul-390.png` with `ref-clinic-byeotteul.png`, the bands of `/tmp/profile-clinic-shots/clinic-byeotteul/` with the `ref-clinic-byeotteul-full-NN.png` bands, and `ref-clinic-byeotteul.txt` with the text of `profile/clinic-byeotteul/index.html`, and confirm items (1)–(4) of T12
       reason: copied wording or logos in another language, and "reads as the same site", are judgements a person makes.
       scope: profile/clinic-byeotteul
-      reviewed: PASS @b3041a4 #154a0a4e 2026-11-18 — no Tia name, logo, sentence or photo; first screens differ in hero composition, wordmark and colours
+      reviewed: PASS @6dd13ab #154a0a4e 2026-11-18 — no Tia name, logo, sentence or photo; first screens differ in hero composition, wordmark and colours
 
 ## Sample D — 보늬피부과 (`profile/clinic-bonui/`)
 
@@ -185,15 +185,15 @@ The accent is the last `palette` entry in `PROFILES` (AC53·AC54). Faces are Goo
 - [ ] T32 Review D's content and photos (AC12·AC26·AC27·AC28·AC29·AC31·AC83) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/clinic-bonui/` (command: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py page clinic-bonui`), read `profile/clinic-bonui/index.html` and `style.css`, open every image in its `img/` and the bands, and confirm items (1)–(6) of T10 for this sample, and (7) each item in the 진료 안내 section names a procedure and the skin concern it addresses (for example "여드름 · 압출과 진정 관리") and says nothing about its outcome (no "깨끗해집니다", "개선됩니다", "효과", durations of effect)
       reason: whether a sentence states an outcome is a judgement about meaning; AC81 only catches listed words.
       scope: profile/clinic-bonui
-      reviewed: PASS @b3041a4 #328ad5fe 2026-11-18 — (1)-(7) pass; footer index.html:167 '대표자 서지안(가상 인물)', doctors :115/:120 marked, addresses (가상 주소), no people in photos, 진료 안내 items pair concern and procedure with no outcome
+      reviewed: PASS @6dd13ab #328ad5fe 2026-11-18 — (1)-(7) pass; footer index.html:167 '대표자 서지안(가상 인물)', doctors :115/:120 marked, addresses (가상 주소), no people in photos, 진료 안내 items pair concern and procedure with no outcome
 - [ ] T33 Review D's full-page screenshots for overlapping or clipped text (AC42·AC43) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/clinic-bonui/` (command: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py page clinic-bonui`), and confirm items (1)–(4) of T11 on `/tmp/profile-clinic-shots/clinic-bonui/desktop-1440-NN.png` and `mobile-390-NN.png`
       reason: whether text overlaps or is clipped is a visual judgement over the whole rendered page; no command decides it reliably.
       scope: profile/clinic-bonui
-      reviewed: PASS @b3041a4 #5ae559c5 2026-11-18 — desktop-1440-01..05 and mobile-390-01..06 plus band seams: no overlapping or clipped text; booking-bar cover excluded by rule
+      reviewed: PASS @6dd13ab #5ae559c5 2026-11-18 — desktop-1440-01..05 and mobile-390-01..06 plus band seams: no overlapping or clipped text; booking-bar cover excluded by rule
 - [ ] T34 Compare D with Ever/Body (AC50·AC51) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/compare/` for clinic-bonui and to `/tmp/profile-clinic-shots/clinic-bonui/` (commands: `python3 docs/features/2026-11-18-profile-clinic/check_browser.py compare`, `check_browser.py page clinic-bonui`). Compare `clinic-bonui-1440.png` and `clinic-bonui-390.png` with `ref-clinic-bonui.png`, the bands of `/tmp/profile-clinic-shots/clinic-bonui/` with the `ref-clinic-bonui-full-NN.png` bands, and `ref-clinic-bonui.txt` with the text of `profile/clinic-bonui/index.html`, and confirm items (1)–(4) of T12
       reason: copied wording or logos in another language, and "reads as the same site", are judgements a person makes.
       scope: profile/clinic-bonui
-      reviewed: PASS @b3041a4 #71f218ec 2026-11-18 — no Ever/Body name, logo, sentence or photo; first screens differ in hero composition, wordmark and colours
+      reviewed: PASS @6dd13ab #71f218ec 2026-11-18 — no Ever/Body name, logo, sentence or photo; first screens differ in hero composition, wordmark and colours
 
 ## Gallery and branch
 
@@ -203,7 +203,7 @@ The accent is the last `palette` entry in `PROFILES` (AC53·AC54). Faces are Goo
 - [ ] T38 Compare the five designs (AC52) — verify(human): apply the evidence rule to `/tmp/profile-clinic-shots/compare/` for all three clinic samples and to each `/tmp/profile-clinic-shots/<slug>/` (commands: `check_browser.py compare`, `check_browser.py page <slug>`). In `compare/`, set each clinic sample's `-1440.png` and `-390.png` beside those of `flower-bomgyeol`, `food-saebyeokmil` and the other two clinic samples; for the rest of each page use the bands in `/tmp/profile-clinic-shots/<slug>/` and the `-full-NN.png` bands of flower and food in `compare/`. Confirm for each clinic sample, against each of the four others: (1) the first screens differ in at least two of: hero composition (photo placement and size, where the headline sits), wordmark face and position, base and accent colour; (2) the rest of the page does not repeat the other's section layout and styling: no run of three or more consecutive bands with the same grid, card shape and heading style. Shared elements that every sample needs (sample notice, footer credits, a mobile booking bar) do not count
       reason: "reads as the same design" is a taste judgement a person makes.
       scope: profile/clinic-neuru, profile/clinic-byeotteul, profile/clinic-bonui
-      reviewed: PASS @b3041a4 #475c3137 2026-11-18 — every pair differs in 2+ first-screen traits; no 3-band run with the same grid, card shape and heading style (closest: neuru×bonui 의료진/진료시간 share grid and rule lines, heading style differs)
+      reviewed: PASS @6dd13ab #475c3137 2026-11-18 — every pair differs in 2+ first-screen traits; no 3-band run with the same grid, card shape and heading style (closest: neuru×bonui 의료진/진료시간 share grid and rule lines, heading style differs)
 
 Always last, never removed:
 
