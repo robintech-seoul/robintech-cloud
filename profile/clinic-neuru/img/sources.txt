@@ -1,0 +1,6 @@
+hero-waiting.jpg https://unsplash.com/photos/SKTgUNVocPM https://images.unsplash.com/photo-1653971858341-865fca7c6d6e?w=2000&q=72&fm=jpg&fit=max
+room-chair.jpg https://unsplash.com/photos/e7MJLM5VGjY https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=70&fm=jpg&fit=max
+wood-slats.jpg https://unsplash.com/photos/iuYIDIss1Mc https://images.unsplash.com/photo-1700809887581-c41c239e808e?w=1400&q=70&fm=jpg&fit=max
+tools.jpg https://unsplash.com/photos/LO4HKJVyQjM https://images.unsplash.com/photo-1643660527217-b5e025ac642e?w=1400&q=70&fm=jpg&fit=max
+brushes.jpg https://unsplash.com/photos/VCC5Vc0X2F8 https://images.unsplash.com/photo-1777446523856-e7acffa844a7?w=1400&q=70&fm=jpg&fit=max
+lounge.jpg https://unsplash.com/photos/XKm9AmmSn3I https://images.unsplash.com/photo-1772751541531-e084e8f56630?w=1600&q=70&fm=jpg&fit=max

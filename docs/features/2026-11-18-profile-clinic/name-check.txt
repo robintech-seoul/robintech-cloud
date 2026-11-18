@@ -1,0 +1,87 @@
+# AC11 clinic-name check — 2026-11-18 (implement stage, T1)
+# Tools: Chrome (claude-in-chrome). kakao-map = place search on map.kakao.com (count and result list read from the page).
+# daum = Daum integrated web search (search.daum.net, w=tot) read in the same browser; 'place card' = the 장소 block (#poiColl),
+# which a positive control (서울홍치과) showed. Naver was not used.
+
+query: kakao-map 느루의원
+hits: 0 places ('느루의원 검색 결과가 없어요.')
+query: kakao-map 느루치과
+hits: 0 places ('느루치과 검색 결과가 없어요.')
+query: kakao-map 느루내과
+hits: 0 places ('느루내과 검색 결과가 없어요.')
+query: kakao-map 느루가정의학과
+hits: 0 places ('느루가정의학과 검색 결과가 없어요.')
+query: kakao-map 느루피부과
+hits: 0 places ('느루피부과 검색 결과가 없어요.')
+query: kakao-map 느루클리닉
+hits: 1 place, not a clinic: 느루헤어 (미용실, 경기 시흥시); shown as '장소명 느루클리닉 검색결과'
+query: daum 느루의원
+hits: no place card; top web/news hits: 대전YWCA 80주년 기념식 news (느루 as a word), 여성계 게시판 — no clinic
+query: daum 느루치과
+hits: no place card; top hits: 느루문화예술단 '오래도록 느루아트' exhibitions held at 서울홍치과 (an arts group, not a clinic named 느루)
+query: daum 느루내과
+hits: no place card; top hits: a health news item quoting Dr. Scott Noorda (느루다), 서울시 감염병 news — no clinic
+query: daum 느루가정의학과
+hits: no place card; top hits: unrelated retail and COVID news — no clinic
+query: daum 느루피부과
+hits: no place card; no web hits listed
+query: daum 느루클리닉
+hits: no place card; top hits: 상주 '이안느루' rural programme news — no clinic
+
+query: kakao-map 볕뜰의원
+hits: 0 places ('볕뜰의원 검색 결과가 없어요.')
+query: kakao-map 볕뜰치과
+hits: 0 places ('볕뜰치과 검색 결과가 없어요.')
+query: kakao-map 볕뜰내과
+hits: 0 places ('볕뜰내과 검색 결과가 없어요.')
+query: kakao-map 볕뜰가정의학과
+hits: 0 places ('볕뜰가정의학과 검색 결과가 없어요.')
+query: kakao-map 볕뜰피부과
+hits: 0 places ('볕뜰피부과 검색 결과가 없어요.')
+query: kakao-map 볕뜰클리닉
+hits: 0 places ('볕뜰클리닉 검색 결과가 없어요.')
+query: kakao-map 볕뜰가정의학과의원
+hits: 0 places ('볕뜰가정의학과의원 검색 결과가 없어요.')
+query: daum 볕뜰의원
+hits: no place card; no web hits listed
+query: daum 볕뜰치과
+hits: no place card; no web hits listed
+query: daum 볕뜰내과
+hits: no place card; no web hits listed
+query: daum 볕뜰가정의학과
+hits: no place card; no web hits listed
+query: daum 볕뜰피부과
+hits: no place card; no web hits listed
+query: daum 볕뜰클리닉
+hits: no place card; no web hits listed
+query: daum 볕뜰가정의학과의원
+hits: no place card; no web hits listed
+
+query: kakao-map 보늬의원
+hits: 0 places ('보늬의원 검색 결과가 없어요.')
+query: kakao-map 보늬치과
+hits: 0 places ('보늬치과 검색 결과가 없어요.')
+query: kakao-map 보늬내과
+hits: 0 places ('보늬내과 검색 결과가 없어요.')
+query: kakao-map 보늬가정의학과
+hits: 0 places ('보늬가정의학과 검색 결과가 없어요.')
+query: kakao-map 보늬피부과
+hits: 0 places ('보늬피부과 검색 결과가 없어요.')
+query: kakao-map 보늬클리닉
+hits: 0 places ('보늬클리닉 검색 결과가 없어요.')
+query: daum 보늬의원
+hits: no place card; top hits: unrelated retail news — no clinic
+query: daum 보늬치과
+hits: no place card; top hits: unrelated retail and 의료봉사 news — no clinic
+query: daum 보늬내과
+hits: no place card; no web hits listed
+query: daum 보늬가정의학과
+hits: no place card; top hits: unrelated retail news — no clinic
+query: daum 보늬피부과
+hits: no place card; top hits: cosmetics news about a 밤보늬추출물 skincare product — not a clinic
+query: daum 보늬클리닉
+hits: no place card; top hits: hotel dessert news (보늬밤 cake), food column — no clinic
+
+verdict: 느루치과 no match
+verdict: 볕뜰가정의학과의원 no match
+verdict: 보늬피부과 no match
