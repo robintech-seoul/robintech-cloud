@@ -650,7 +650,7 @@ def build_profile_list():
     } for p in live}
     data_json = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
-    desc = "꽃집, 식당, 병원, 키즈카페 등 업종별로 설계한 로빈테크 홈페이지 디자인 프로파일. 마음에 드는 디자인을 골라 우리 가게 홈페이지로 만들어 보세요."
+    desc = "꽃집, 식당, 병원 등 업종별로 설계한 로빈테크 홈페이지 디자인 프로파일. 마음에 드는 디자인을 골라 우리 가게 홈페이지로 만들어 보세요."
     body = f"""
 <main class="pf">
 <section class="pf-hero">
