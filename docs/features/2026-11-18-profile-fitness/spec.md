@@ -1,7 +1,7 @@
 ---
 status: shipped
-commits: 59a58c0cb77e7d45fafcfd0207c05b55209b9c17..674c7bd494cea2ab421b0d904775734fd990b58c
-approved_at: 59a58c0cb77e7d45fafcfd0207c05b55209b9c17
+commits: e284667587f0572e53713214eb7e5ba94bca0360..9d8f7e2e2cf27eca1842e1ba42faa163d57edbf1
+approved_at: 9d8f7e2e2cf27eca1842e1ba42faa163d57edbf1
 ---
 
 # Pilates franchise profile sample (`fitness`)
