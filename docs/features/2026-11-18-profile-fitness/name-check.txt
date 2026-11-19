@@ -1,0 +1,123 @@
+Brand name checks for the fitness (Pilates franchise) samples — spec stage, 2026-11-18, Chrome.
+Before G1 (first part below): one name proposed for a single sample (숨고름, alternate 곧추), agent decision.
+After G1 (second part): the human picked two references and gave 필라나라; 필라나라 went to sample D
+(orchestrator decision) and 쭈욱 to sample B (agent decision). 숨고름 and 곧추 are not used.
+Q3 answer (third part, at the end, 2026-11-19): the human dropped 필라나라 (a Pilates YouTube channel uses it) and
+delegated D's new name to the agent, which chose 미더움 (fitness-mideoum); the human accepted 쭈욱.
+Naver was not searched.
+
+Searches used
+- Kakao Map place search (map.kakao.com/?q=...). "검색 결과가 없어요" = no place.
+- Google web search with the name in quotes plus 필라테스.
+- Daum web search for "<name> 필라테스" in quotes.
+- KFTC 가맹사업거래 정보공개서 열람 (franchise.ftc.go.kr), search by 영업표지.
+  Control: 영업표지 "필라테스" returned 26 brands (e.g. 모던필라테스MPI); "숨" returned 7 brands
+  (숨은고기, 우아한 숨, 숨맑은집, 숨비소리, 숨, 숨쉬는 순두부, 숨헤어), so the search works.
+
+PROPOSED BEFORE G1, NOT USED: 숨고름 (slug fitness-sumgoreum)
+  Meaning: 숨을 고르다 — evening out the breath before the next movement; Pilates is breath-led.
+  Kakao Map: "숨고름 필라테스", "숨고름필라테스", "숨고름" — no result for each.
+  Google "\"숨고름\" 필라테스": AI overview says no studio of that exact name; hits are blog uses
+    of the word and the slang 숨고름청년 (see risk). No studio, no Instagram account found.
+  Daum "\"숨고름 필라테스\"": one ad (soomgo.com 숨고, a services marketplace) and an image strip;
+    no place card, no web document for the name.
+  KFTC 영업표지 "숨고름": 0 results ("등록된 목록이 없습니다").
+  Risk: 숨고름청년 is in 2026 use (dcinside, inven, threads) as a soft label for young people
+    who are "쉬었음" (out of work). A brand reading may pick this up.
+  Risk: shares the syllable 고 with 고임 (law-goim). Different industry, so gallery confusion is low.
+  Risk: 숨고 (soomgo.com) ads appear for the query; 숨고름 begins with 숨고.
+
+ALTERNATE BEFORE G1, NOT USED: 곧추 (곧추 서다 — stand upright)
+  Kakao Map: "곧추 필라테스", "곧추" — no result for each.
+  Google "\"곧추\" 필라테스": articles using 곧추세우다; 곧추베개 (Godchoo, a posture pillow brand,
+    Wadiz/Instagram) — same posture space, a near-collision.
+  Daum "\"곧추 필라테스\"": image strip only; no place card, no web document.
+  KFTC 영업표지 "곧추": 0 results.
+  Risk: the plain romanization "gotchu" reads as English slang ("gotcha / got you").
+
+REJECTED
+  온숨 — Kakao "온숨 필라테스": 온숨필라테스 (헬스클럽, 전남 강진) and 숨온필라테스 (경기 고양).
+  올곧 — Kakao "올곧 필라테스": 올곧필라테스 (서울 중구 서소문로, 02-569-…); "올곧" also 법률사무소 올곧.
+  숨틈 — Kakao "숨틈 필라테스": none, but Google: 숨틈 필라테스 (@soomteum.pilates, 상암동 DMC, opening Nov 2026).
+  늘숨 — Kakao "늘숨" auto-searched to 281 places; Google: 늘숨요가 (@neulsum_yoga), 늘숨 요가필라 (대천3동),
+         and a kmong "늘숨 필라테스" fictional landing-page demo by another agency.
+  가눔 — Kakao clean ("가눔 필라테스", "가눔필라테스" none; "가눔" = software firm, valley), but 가눔 and
+         가늠 (law-ganeum) differ by one vowel; too close in the same gallery.
+  나란 — Kakao fuzzy-matched 30 (나를 위한 필라테스 …); Google hits read it as "나란 (나라는) 여자". Ambiguous.
+  여밈, 디딤, 곧음 — Kakao "<name> 필라테스" no result; not taken further (여밈 is mostly a garment word in
+         search results; 디딤 and 곧음 got Kakao only).
+
+=== After G1 (2026-11-18) ===
+
+D — 필라나라 (slug fitness-pilanara), given by the human. DROPPED by the human at Q3 (2026-11-19); evidence kept below.
+  Kakao Map: "필라나라", "필라나라 필라테스", "필라나라필라테스" — no result for each.
+  KFTC 영업표지 "필라나라": 0 results ("등록된 목록이 없습니다").
+  Google "\"필라나라\"": a YouTube channel named 필라나라 (@narapilates; about page: 8.04천 subscribers,
+    244 videos, about 3.18M views, joined 2022-12-27, link instagram.com/narapilates_, a contact e-mail).
+    Content: Pilates reformer / barrel / chair / cadillac class sequences and mat workouts, by one instructor.
+    No studio address, academy or paid class on the YouTube about page itself; see the Instagram line below.
+    Google "\"필라나라\" 필라테스 스튜디오": the same channel's videos, listed in other channels' sidebars; no studio
+      named 필라나라. (The hashtag #필라테스하는나라 in the results is on a "Playing Pilates" video, not on this channel.)
+  Instagram narapilates_ (linked from the channel; opened 2026-11-18): verified, about 3.6만 followers, 978 posts.
+    Bio: the owner is 원장 of 웨이크필라테스 (@wake_pilates_), offers 강사교육 and 강사브랜딩, "필라테스수업|운영|브랜딩꿀팁".
+    So 필라나라 is the content brand of a working Pilates studio owner and instructor-educator.
+  Daum "\"필라나라\"": a Naver blog titled "필라나라로 초대합니다" (blog.naver.com/unni_seeun) by an instructor
+    at 언니네필라테스 양덕점 (a real studio in 창원); other hits are unrelated (휠라, 석고필라 seeds, a 2006 cafe nickname).
+    Daum "\"필라나라 필라테스\"": the browser extension refused to read the page; not checked.
+  Finding: a Pilates YouTube channel run by a studio owner who sells instructor education, and an instructor's
+    blog title, use the name. No place and no franchise use it. Whether that is "a Pilates or fitness business"
+    under AC15 is for the human (spec Q3).
+
+B — CHOSEN: 쭈욱 (slug fitness-jjuuk), agent decision; accepted by the human at Q3 (2026-11-19).
+  Meaning: 쭈욱 펴다 — stretching out long and slowly; friendly, everyday, no claim of results.
+  Kakao Map: "쭈욱 필라테스", "쭈욱필라테스" — no result for each; "쭈욱" — one place, 쭈욱게스트하우스 (Jeju, lodging).
+  Google "\"쭈욱\" 필라테스": only the adverb in posts (e.g. "땀쭈욱" in a blog title about 필라테스365,
+    "고관절 쭈욱", "캐딜락에서 쭈욱"); no studio, brand or account of that name.
+  Daum "\"쭈욱 필라테스\"": two ads for unrelated studios; web and blog hits use the adverb ("앞으로 쭈욱 필라테스 …").
+  KFTC 영업표지 "쭈욱": 0 results.
+  Confusability: no shared syllable with 봄결, 새벽밀, 느루, 볕뜰, 본의, 가늠, 고임 or 필라나라.
+  Risk: a common adverb, so web searches for it are noisy; "jjuuk" is an unusual-looking romanization.
+
+B — REJECTED or NOT TAKEN FURTHER
+  기지개 — Kakao "기지개 필라테스": 기지개스튜디오 필라테스&소마틱… (서울 용산구 두텁바위로, 2 places).
+  마실 — Kakao "마실 필라테스": 마실웰니스필라테스 (인천 미추홀구), 마실짐 24시헬스 필라테스 장기점.
+  꼼지락 — Kakao "꼼지락 필라테스", "꼼지락필라테스" none; "꼼지락" 176 places (crafts, play spaces). Google: a youth-centre
+         Pilates programme "꼼지락클래스" and a "꼼지락 필라테스 요가 양말" sock product (아띠꼴로). Rejected as near-collisions;
+         Daum and KFTC not run.
+  폴짝 — Kakao "폴짝 필라테스" none; not taken further (hopping does not describe Pilates). Google, Daum, KFTC not run.
+
+=== Q3 answer (2026-11-19) ===
+
+Human (Seokhyun Kim): change 필라나라; the new name is delegated to the agent. 쭈욱 / fitness-jjuuk accepted.
+Brief for D: Korean Pilates franchise head office, warm daylight, Korean serif headings, a brand an owner-to-be
+and a member can trust. Screen before searching: no syllable of 봄결, 새벽밀, 느루, 볕뜰, 본의, 가늠, 고임, 쭈욱 or 리본;
+no sun or light theme (clinic-byeotteul's 볕); not the 숨- or 곧- families tried before G1.
+Same four searches as above (Chrome). KFTC control on 2026-11-19: 영업표지 "필라테스" returned 26 brands
+(including 리본필라테스, 모던필라테스MPI), so the search works.
+
+D — CHOSEN: 미더움 (slug fitness-mideoum), agent decision delegated by the human.
+  Meaning: 미덥다 — trustworthy, reliable; what a member and an owner-to-be want from a head office. No claim of results.
+  Romanization: Revised Romanization 미 mi, 더 deo, 움 um, no sound change -> mideoum.
+  Kakao Map: "미더움 필라테스", "미더움필라테스" — no result for each; "미더움" — 2 places: 미더움인테리어 (인테리어,
+    대구 동구 동촌로) and 미더움영농조합법인 (농업, 전남 강진군). Neither is fitness.
+  Google ""미더움" 필라테스": hits use the adjective ("못 미더움" in posts and comments, some on pages that also
+    mention 필라테스 in ads or sidebars); 주식회사 미더움 (대구 동구, 기계 · 자동차부품) on a company lookup site;
+    미더움영농조합법인 on a KBS broadcast-info page. No studio, brand or account of that name.
+  Daum ""미더움 필라테스"": a did-you-mean for "미디움 필라테스" and a shopping strip; no place card, no web document.
+    Kakao Map "미디움 필라테스" — no result.
+  KFTC 영업표지 "미더움": 0 results ("등록된 목록이 없습니다").
+  Confusability: no shared syllable with 봄결, 새벽밀, 느루, 볕뜰, 본의, 가늠, 고임, 쭈욱 or 리본/Reborn.
+  Risk: "못 미더움" (untrustworthy) is common in casual writing, so the bare word can be read negatively in a joke.
+  Risk: Daum auto-suggests 미디움 (medium); one vowel apart.
+
+D — NOT TAKEN
+  햇마루 (haenmaru; 햇 sun + 마루 wooden floor) — Kakao "햇마루 필라테스", "햇마루필라테스" none; "햇마루" 1 place
+    (식품, 광주 북구 동문대로). Google ""햇마루" 필라테스": a food brand (고추부각, 김부각, 찰순대 on Coupang; a 2018
+    법인 for 농산물 가공) and a humour-site post about an MFDS recall of 햇마루 김부각. Daum ""햇마루 필라테스"":
+    shopping strip only. KFTC "햇마루": 0. Not taken: shares 루 with 느루 (clinic-neuru, both slugs end in -ru), has
+    the same build as 볕뜰 (native sun word + a place in the house), and a real food brand with a recall story.
+  미쁨 (trustworthy) — Kakao "미쁨 필라테스" none, but "미쁨" 95 places (florists, beauty, …); too crowded to clear.
+    Google, Daum, KFTC not run.
+  다붓 (close together) — Kakao "다붓" 4 places, a multi-branch restaurant (다붓 본오점, 고잔점, 안산). A branch brand
+    in the franchise space; not taken further. Google, Daum, KFTC not run.
+  나볏 (dignified bearing) — not searched; 볏 is one stroke from 볕 (볕뜰).
