@@ -1,0 +1,6 @@
+detail-hair-strands.jpg https://unsplash.com/photos/GYzmk2m1j3E https://images.unsplash.com/photo-1659112966963-5f0c6207ab76?w=1000&q=75&fm=jpg
+hero-round-bob.jpg https://unsplash.com/photos/VfOw1B-y_rQ https://images.unsplash.com/photo-1525614686090-7a3108e3758e?w=1400&q=75&fm=jpg
+style-bangs-bob.jpg https://unsplash.com/photos/yuahvgxIXjE https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?w=900&q=75&fm=jpg
+style-long-curl.jpg https://unsplash.com/photos/X4eiREY8SHI https://images.unsplash.com/photo-1770918655039-c08735108622?w=900&q=75&fm=jpg
+style-short-curl.jpg https://unsplash.com/photos/Hoc8u4HJO7w https://images.unsplash.com/photo-1774897778836-3b13763e71b3?w=900&q=75&fm=jpg
+style-straight-bob.jpg https://unsplash.com/photos/8DLLdSRFvb4 https://images.unsplash.com/photo-1776275758873-31603dd06112?w=900&q=75&fm=jpg
