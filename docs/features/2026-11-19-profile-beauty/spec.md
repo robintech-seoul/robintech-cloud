@@ -1,7 +1,7 @@
 ---
 status: shipped
-approved_at: a0ac015bd7e7865ffc24b35c648f9bc56d08fa99
-commits: a0ac015bd7e7865ffc24b35c648f9bc56d08fa99..815a77aec309c8f14aa1e304aea13217f4f7631a
+approved_at: 5556f9a1584da19a0f2226b50f8523fb085c9370
+commits: 3327f1a99ce9710714c5f611440ef6c5cb53762d..5556f9a1584da19a0f2226b50f8523fb085c9370
 ---
 
 # Hair-salon franchise profile samples (`beauty`)
