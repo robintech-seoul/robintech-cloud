@@ -6,7 +6,7 @@ status: approved
 
 **Role:** The industry sample sites the gallery shows. Without them the gallery has nothing to preview.
 
-**Source:** `profile/<slug>/` (currently `flower-bomgyeol`, `food-saebyeokmil`, `clinic-neuru`, `clinic-byeotteul`, `clinic-bonui`, `law-ganeum`, `law-goim`, `fitness-mideoum`, `fitness-jjuuk`, `beauty-robinhair`, `beauty-robinsalon`, `beauty-robinhairsalon`, `interior-robininterior`, `interior-robindesign`, `interior-robinhome`; one industry may have several samples)
+**Source:** `profile/<slug>/` (currently `flower-bomgyeol`, `food-saebyeokmil`, `clinic-neuru`, `clinic-byeotteul`, `clinic-bonui`, `law-ganeum`, `law-goim`, `fitness-mideoum`, `fitness-jjuuk`, `beauty-robinhair`, `beauty-robinsalon`, `beauty-robinhairsalon`, `interior-robininterior`, `interior-robindesign`, `interior-robinhome`, `crypto-robincoin`, `crypto-robincustody`, `crypto-robinchain`; one industry may have several samples)
 
 ## Public contract
 
@@ -23,4 +23,4 @@ How a sample is researched, built and checked: `docs/profile-playbook.md`.
 
 | Component | Used for |
 | --- | --- |
-| (none) | Samples load only Google Fonts and Pretendard (jsDelivr). Photos are free-licence Unsplash/Pexels images; every sample keeps them in `profile/<slug>/img/` with `img/sources.txt` |
+| (none) | Samples load only Google Fonts and Pretendard (jsDelivr). Photos are free-licence Unsplash/Pexels images; a sample that uses photos keeps them in `profile/<slug>/img/` with `img/sources.txt`. The three crypto samples use no photo (pictures are CSS and inline SVG) and have no `img/` folder |
