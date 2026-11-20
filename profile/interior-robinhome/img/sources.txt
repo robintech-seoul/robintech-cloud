@@ -1,0 +1,4 @@
+hero-floor-table.jpg https://unsplash.com/photos/SoNaNOFT974 https://images.unsplash.com/photo-1512972972907-6d71529c5e92?w=2000&q=80&fm=jpg
+card-living.jpg https://unsplash.com/photos/2cfj0Y5ch00 https://images.unsplash.com/photo-1772797583328-f83bc3f94f80?w=1200&q=80&fm=jpg
+card-dining.jpg https://unsplash.com/photos/DsH3VOZanYA https://images.unsplash.com/photo-1623903800664-a840b8be323b?w=1600&q=80&fm=jpg
+card-bed.jpg https://unsplash.com/photos/OihXclRy8n0 https://images.unsplash.com/photo-1699869653495-fe26f4c70b3e?w=1600&q=80&fm=jpg
