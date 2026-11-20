@@ -1,0 +1,4 @@
+hero-living.jpg https://unsplash.com/photos/EVjqpcn79AM https://images.unsplash.com/photo-1632829882891-5047ccc421bc?w=2000&q=80&fm=jpg
+card-living.jpg https://unsplash.com/photos/Aq8ljLz12gk https://images.unsplash.com/photo-1649083048381-520a5b3d91ff?w=1400&q=80&fm=jpg
+card-kitchen.jpg https://unsplash.com/photos/-jXzGAYW86o https://images.unsplash.com/photo-1781344328679-54cca842940e?w=1400&q=80&fm=jpg
+card-bath.jpg https://unsplash.com/photos/N03PjHWOEFA https://images.unsplash.com/photo-1733426107854-ee00a25d72a7?w=1400&q=80&fm=jpg
