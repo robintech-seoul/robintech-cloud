@@ -1,7 +1,7 @@
 ---
 status: shipped
-approved_at: 648e8ab8ce70c1a236591cf59f0b241b0487f844
-commits: 648e8ab8ce70c1a236591cf59f0b241b0487f844..f0dd5bbadba2a49e49bf57806c4b86517f40f84c
+approved_at: 30706b2080dd0f40f640551e9b6e7ed30721fe30
+commits: 2540b11e6851837a99c6ff795b2d8c900162ba9e..30706b2080dd0f40f640551e9b6e7ed30721fe30
 ---
 
 # Interior profile samples (`interior`)
