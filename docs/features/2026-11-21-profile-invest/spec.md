@@ -1,7 +1,7 @@
 ---
 status: shipped
-approved_at: 01f250696cc63764cf0772f437f8020dbd04ac1d
-commits: 01f250696cc63764cf0772f437f8020dbd04ac1d..efd70d310d6e5213d65ba08a327acecc74455476
+approved_at: 003195c9b817e97856b9584eadbfdb267cc7b278
+commits: 90f5b86b2342ea0710a82816a2ca4b05ee8f1479..003195c9b817e97856b9584eadbfdb267cc7b278
 ---
 
 # Invest profile samples (`invest`)
