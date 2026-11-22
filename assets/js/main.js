@@ -119,7 +119,6 @@
   var deviceBtns = viewer.querySelectorAll('[data-device]');
   var lastFocus = null;
   var current = null;
-  var pushed = false;
 
   var setDevice = function (d) {
     frame.setAttribute('data-device', d);
@@ -151,10 +150,14 @@
       i.style.background = c; s.appendChild(i); s.appendChild(document.createTextNode(c)); pal.appendChild(s);
     });
     setDevice('desktop');
-    iframe.src = url.href;
+    iframe.contentWindow.location.replace(url.href);
     viewer.hidden = false;
     document.documentElement.classList.add('pf-lock');
-    if (!fromNav && location.hash !== '#' + slug) { history.pushState(null, '', '#' + slug); pushed = true; }
+    if (!fromNav && location.hash !== '#' + slug) {
+      // 닫으며 남긴 항목 위에서는 새로 쌓지 않고 그 항목을 다시 씁니다.
+      if (history.state && history.state.pfClosed) history.replaceState(null, '', '#' + slug);
+      else history.pushState(null, '', '#' + slug);
+    }
     viewer.querySelector('.pf-v-close').focus();
     if (typeof window.gtag === 'function') window.gtag('event', 'profile_preview', { profile: slug });
   };
@@ -162,17 +165,18 @@
   var hide = function () {
     if (viewer.hidden) return;
     viewer.hidden = true;
-    iframe.src = 'about:blank';
+    iframe.contentWindow.location.replace('about:blank');
     current = null;
     document.documentElement.classList.remove('pf-lock');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   };
   // 열 때 history 항목을 쌓아 두므로 휴대폰 뒤로 가기로도 닫힙니다.
+  // 닫기 버튼은 history.back() 에 기대지 않습니다. 미리보기 안에서 쌓인 항목이 있으면
+  // 뒤로 가기가 샘플만 되돌리고 틀은 남기 때문입니다.
   var close = function () {
     if (viewer.hidden) return;
-    if (pushed) { pushed = false; history.back(); return; }
     hide();
-    history.replaceState(null, '', location.pathname + location.search);
+    history.replaceState({ pfClosed: true }, '', location.pathname + location.search);
   };
   // 미리보기 안을 클릭한 뒤에도 Esc 로 닫히게 (같은 출처 iframe)
   iframe.addEventListener('load', function () {
@@ -208,7 +212,7 @@
   var fromHash = function () {
     var slug = decodeURIComponent(location.hash.slice(1));
     if (slug && data[slug]) { if (slug !== current) open(slug, null, true); }
-    else { pushed = false; hide(); }
+    else hide();
   };
   window.addEventListener('popstate', fromHash);
   window.addEventListener('hashchange', fromHash);
